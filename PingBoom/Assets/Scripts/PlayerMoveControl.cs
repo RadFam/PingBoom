@@ -14,6 +14,12 @@ namespace GameObjects
 		float timerCheck = 0.1f;
 		float timerCnt;
         // Use this for initialization
+
+		public bool IsSliding
+		{
+			get {return isSliding;}
+			set {isSliding = value;}
+		}
         void Awake()
         {
 			myRigid = gameObject.GetComponent<Rigidbody2D>();
