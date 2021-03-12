@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using AllMenusUI;
 
 namespace SystemObjects
 {
@@ -44,6 +45,7 @@ namespace SystemObjects
 
 		IEnumerator LoadGameScene()
 		{
+			AllMenusScript.inst.OnSceneClosed();
 			yield return StartCoroutine(FadeIn());
 
 			AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(((ScenesNames)sceneToLoad).ToString("g"), LoadSceneMode.Single);
@@ -55,6 +57,7 @@ namespace SystemObjects
 			currentScene = sceneToLoad;
 
 			yield return StartCoroutine(FadeOut());
+			AllMenusScript.inst.OnSceneOpened();
 		}
 
 		IEnumerator FadeIn()
