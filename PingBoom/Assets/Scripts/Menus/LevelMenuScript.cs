@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelMenuScript : MonoBehaviour {
+namespace AllMenusUI
+{
+    public class LevelMenuScript : MonoBehaviour
+    {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        // Use this for initialization
+        public void OnClose()
+        {
+            gameObject.SetActive(false);
+        }
+        public void OnOpen()
+        {
+            gameObject.SetActive(true);
+        }
+    }
 }

@@ -1,16 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class HeaderPanelScript : MonoBehaviour {
+namespace AllMenusUI
+{
+    public class HeaderPanelScript : MonoBehaviour
+    {
 
-	// Use this for initialization
-	void Start () {
+        [SerializeField]
+		Text lastShoots;
+		[SerializeField]
+		Text currentScore;
+
+		int shootsVol;
+		int scoreVol;
 		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+		// Use this for initialization
+        void Start()
+        {
+
+        }
+
+        public void OnGearClick()
+		{
+			AllMenusScript.inst.OpenClosePause(true);
+		}
+    }
 }

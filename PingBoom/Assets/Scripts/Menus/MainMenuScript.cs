@@ -2,15 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainMenuScript : MonoBehaviour {
+namespace AllMenusUI
+{
+    public class MainMenuScript : MonoBehaviour
+    {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        // Use this for initialization
+        void Start()
+        {
+
+        }
+
+        public void OnChooseLevelClick()
+		{
+			AllMenusScript.inst.OpenCloseLevels(true);
+		}
+
+		public void OnSettingsOpenClick()
+		{
+			AllMenusScript.inst.OpenCloseSettings(true);
+		}
+
+		public void OnFullExitClick()
+		{
+			// Exit Application(!)
+		}
+    }
 }
