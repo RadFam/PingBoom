@@ -40,27 +40,41 @@ namespace AllMenusUI
 			levelSceneOpen = false;
         }
 
-		public void OnSceneClosed()
+		public void OnSceneClosed(bool val)
 		{
-			if (startSceneOpen && !levelSceneOpen)
-			{
-				OnStartSceneClosed();
-			}
-			if (!startSceneOpen && levelSceneOpen)
+            if (!val)
+            {
+                if (startSceneOpen && !levelSceneOpen)
+                {
+                    OnStartSceneClosed();
+                }
+                else if (!startSceneOpen && levelSceneOpen)
+                {
+                    OnLevelSceneClosed();
+                }
+            }
+			else
 			{
 				OnLevelSceneClosed();
 			}
-		}
+        }
 
-		public void OnSceneOpened()
-		{
-			if (!startSceneOpen && levelSceneOpen)
+		public void OnSceneOpened(bool val)
+        {
+            if (!val)
+            {
+                if (!startSceneOpen && levelSceneOpen)
+                {
+                    OnLevelSceneLoaded();
+                }
+                else if (startSceneOpen && !levelSceneOpen)
+                {
+                    OnStartSceneLoaded();
+                }
+            }
+			else
 			{
 				OnLevelSceneLoaded();
-			}
-			if (startSceneOpen && !levelSceneOpen)
-			{
-				OnStartSceneLoaded();
 			}
 		}
 		void OnStartSceneClosed()
@@ -68,6 +82,8 @@ namespace AllMenusUI
 			startSceneOpen = false;
 			levelSceneOpen = true;
 			MMS.gameObject.SetActive(false);
+			SMS.gameObject.SetActive(false);
+			LMS.gameObject.SetActive(false);
 		}
         void OnStartSceneLoaded()
 		{
@@ -81,6 +97,8 @@ namespace AllMenusUI
 			levelSceneOpen = false;
 			startSceneOpen = true;
 			HPS.gameObject.SetActive(false);
+			SMS.gameObject.SetActive(false);
+			PMS.gameObject.SetActive(false);
 		}
 		void OnLevelSceneLoaded()
 		{
@@ -107,10 +125,7 @@ namespace AllMenusUI
 
 		public void OpenCloseSettings(bool val)
 		{
-			if (levelSceneOpen)
-			{
-				SMS.gameObject.SetActive(val);
-			}
+			SMS.gameObject.SetActive(val);
 		}
 
     }

@@ -21,6 +21,12 @@ namespace SystemObjects
         float fadeInterval;
         [SerializeField]
         float fadeAlpha;
+
+		public int CurrentScene
+		{
+			get {return currentScene;}
+		}
+
         // Use this for initialization
         void Start()
         {
@@ -39,13 +45,27 @@ namespace SystemObjects
 			sceneToLoad = sceneNum;
 			if (currentScene != sceneToLoad)
 			{
-				StartCoroutine(LoadGameScene());
+				StartCoroutine(LoadGameScene(false));
 			}
 		}
 
-		IEnumerator LoadGameScene()
+		public void LoadNextScene()
 		{
-			AllMenusScript.inst.OnSceneClosed();
+			if (currentScene >= 1 && currentScene < 28)
+			{
+				sceneToLoad = currentScene + 1;
+				StartCoroutine(LoadGameScene(true));
+			}
+			if (currentScene == 28)
+			{
+				sceneToLoad = 0;
+				StartCoroutine(LoadGameScene(false));
+			}
+		}
+
+		IEnumerator LoadGameScene(bool val)
+		{
+			AllMenusScript.inst.OnSceneClosed(val);
 			yield return StartCoroutine(FadeIn());
 
 			AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(((ScenesNames)sceneToLoad).ToString("g"), LoadSceneMode.Single);
@@ -57,7 +77,7 @@ namespace SystemObjects
 			currentScene = sceneToLoad;
 
 			yield return StartCoroutine(FadeOut());
-			AllMenusScript.inst.OnSceneOpened();
+			AllMenusScript.inst.OnSceneOpened(val);
 		}
 
 		IEnumerator FadeIn()

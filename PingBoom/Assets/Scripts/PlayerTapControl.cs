@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GameObjects;
+using SystemObjects;
 
 namespace Controls
 {
@@ -19,13 +20,25 @@ namespace Controls
 		float strengthForce;
 
 		bool isTapped;
+		bool canProceed;
+
+		LevelManager levelManager;
+
+		public bool CanProceed
+		{
+			get {return canProceed;}
+			set {canProceed = value;}
+		}
         
         void Start()
         {	
+			levelManager = FindObjectOfType<LevelManager>();
+
 			myPlayerMove = gameObject.GetComponent<PlayerMoveControl>();
 			myForceTail = transform.GetChild(0).gameObject.GetComponent<ForceTailScript>();
 			cam = Camera.main;
 			isTapped = false;
+			canProceed = true;
         }
 
         // Update is called once per frame
@@ -48,11 +61,16 @@ namespace Controls
 		
 		void PrepareForShoot()
 		{
-            if (!myPlayerMove.IsSliding)
+            if (canProceed && !myPlayerMove.IsSliding)
             {
                 RaycastHit2D hit = Physics2D.Raycast(cam.ScreenToWorldPoint(Input.mousePosition), Vector3.forward);
                 if (hit.collider != null && hit.transform.CompareTag("Player"))
                 {
+					canProceed = !levelManager.CheckLevelFinished();
+					if (!canProceed)
+					{
+						return;
+					}
                     isTapped = true;
                     myForceTail.gameObject.SetActive(true);
                 }
@@ -61,7 +79,7 @@ namespace Controls
 
 		void AdjustingShoot()
 		{
-			if (isTapped)
+			if (canProceed && isTapped)
             {
                 directionVect = transform.position - cam.ScreenToWorldPoint(Input.mousePosition);
                 forceExpand = directionVect.magnitude * 4;
@@ -74,7 +92,7 @@ namespace Controls
 
 		void MakeShoot()
 		{
-			if (isTapped)
+			if (canProceed && isTapped)
 			{
 				myForceTail.gameObject.SetActive(false);
 				myPlayerMove.StrikePuck(directionVect, forceValue);

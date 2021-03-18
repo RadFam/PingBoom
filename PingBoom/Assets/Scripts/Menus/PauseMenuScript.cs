@@ -1,6 +1,7 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SystemObjects;
 
 namespace AllMenusUI
 {
@@ -15,7 +16,7 @@ namespace AllMenusUI
 
         public void OnMainMenuClick()
 		{
-
+			SceneLoaderScript.inst.LoadScene(0);
 		}
 
 		public void OnSettingsClick()

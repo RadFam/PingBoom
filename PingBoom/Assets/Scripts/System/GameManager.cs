@@ -10,16 +10,24 @@ namespace SystemObjects
     public class GameManager : MonoBehaviour
     {
 		public static GameManager inst;
+
+		#region Global system params
         // Use this for initialization
 		float musicVol;
 		float effectsVol;
 		int previousScore;
+		[SerializeField]
 		int availableLevel;
 		bool saveScoreProgress;
 		string settingsFilename;
 		string settingsFilenamePath;
 
 		Dictionary<string, object> savebleData;
+		#endregion
+
+		#region Game parameters
+		public List<int> everyLevelMaxShoots;
+		#endregion
 
 		public float MusicVol
 		{
@@ -104,7 +112,7 @@ namespace SystemObjects
 			{
 				musicVol = 1.0f;
 				effectsVol = 1.0f;
-				availableLevel = 1;
+				availableLevel = 5;
 				previousScore = 0;
 				saveScoreProgress = true;
 			}
@@ -134,6 +142,12 @@ namespace SystemObjects
                 BinaryFormatter formatter = new BinaryFormatter();
                 formatter.Serialize(stream, savebleData);
             }
+		}
+
+		public void ExitGame()
+		{
+			SaveData();
+			Application.Quit();
 		}
     }
 }
