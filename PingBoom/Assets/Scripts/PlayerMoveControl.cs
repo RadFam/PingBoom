@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SystemObjects;
 
 namespace GameObjects
 {
@@ -14,6 +15,7 @@ namespace GameObjects
 		float timerCheck = 0.1f;
 		float timerCnt;
         // Use this for initialization
+		LevelManager levelManager;
 
 		public bool IsSliding
 		{
@@ -26,6 +28,11 @@ namespace GameObjects
 			isSliding = false;
 			timerCnt = 0.0f;
         }
+
+		void Start()
+		{
+			levelManager = FindObjectOfType<LevelManager>();
+		}
 
         // Update is called once per frame
         void FixedUpdate()
@@ -55,6 +62,7 @@ namespace GameObjects
 				myRigid.AddForce(direction * force, ForceMode2D.Impulse);
 				timerCnt = 0.0f;
 				isSliding = true;
+				levelManager.DecreaseShoot(-1);
 			}
 		}
     }

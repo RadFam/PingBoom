@@ -270,7 +270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &185719819
 RectTransform:
   m_ObjectHideFlags: 0
@@ -364,7 +364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &233914419
 RectTransform:
   m_ObjectHideFlags: 0
@@ -657,6 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f66a1922ecaef743acb244d4670c0b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreCount: 200
 --- !u!58 &593576439
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -973,6 +974,8 @@ GameObject:
   m_Component:
   - component: {fileID: 917075672}
   - component: {fileID: 917075671}
+  - component: {fileID: 917075673}
+  - component: {fileID: 917075674}
   m_Layer: 0
   m_Name: ControlsObject
   m_TagString: Untagged
@@ -1005,6 +1008,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &917075673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 917075670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ced2be6d3ebb24986de669bc034e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &917075674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 917075670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e73a572d4680d24fa215458e0d5a9f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winText: {fileID: 233914420}
+  failText: {fileID: 185719821}
+  winStarFall: {fileID: 1988796391}
 --- !u!1 &927534009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,6 +1063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c0650c2ad91594596a1361a090d973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreCount: 0
   myStages: 4
 --- !u!58 &927534011
 CircleCollider2D:

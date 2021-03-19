@@ -25,17 +25,21 @@ namespace SystemObjects
         void Start()
         {
 			int level = SceneLoaderScript.inst.CurrentScene;
+			Debug.Log("level: " + level.ToString());
 			maxShootsCount = GameManager.inst.everyLevelMaxShoots[level-1];
 			leastShootsCount = maxShootsCount;
 			currentScore = GameManager.inst.PreviousScore;
 
+			isVictory = false;
+			StartCoroutine(ConnectWithGlobalObject());
+
+			/*
 			headerPanelScript = FindObjectOfType<HeaderPanelScript>();
 			headerPanelScript.SetInitScore(leastShootsCount, currentScore);
 
 			destrObjectsOnScene = FindObjectsOfType<ExplodeTargetMeta>().Length;
-			isVictory = false;
-
 			endLevelEffects = FindObjectOfType<EndLevelEffects>();
+			*/
         }
 
 		
@@ -76,7 +80,7 @@ namespace SystemObjects
 
 		public void AddNewScore(int addScore, int numOfDestructed) // addScore and numOfDestructed can be positive or negative numbers(!)
 		{
-			headerPanelScript.SetNewShoots(currentScore, currentScore + addScore);
+			headerPanelScript.SetNewScore(currentScore, currentScore + addScore);
 			currentScore += addScore;
 			GameManager.inst.PreviousScore = currentScore;
 			destrObjectsOnScene += numOfDestructed;
@@ -108,6 +112,17 @@ namespace SystemObjects
 			}
 			
 			yield return null;
+		}
+
+		IEnumerator ConnectWithGlobalObject()
+		{
+			yield return new WaitForSeconds(0.1f);
+
+			headerPanelScript = FindObjectOfType<HeaderPanelScript>();
+			headerPanelScript.SetInitScore(leastShootsCount, currentScore);
+
+			destrObjectsOnScene = FindObjectsOfType<ExplodeTargetMeta>().Length;
+			endLevelEffects = FindObjectOfType<EndLevelEffects>();
 		}
     }
 }

@@ -12,7 +12,9 @@ namespace SystemObjects
 		public static SceneLoaderScript inst;
 
 		public enum ScenesNames {MenuScene, GameScene, GameScene2, GameScene3}
+		[SerializeField]
 		int currentScene;
+		[SerializeField]
 		int sceneToLoad;
 
 		[SerializeField]
@@ -25,6 +27,12 @@ namespace SystemObjects
 		public int CurrentScene
 		{
 			get {return currentScene;}
+		}
+
+		void Awake()
+		{
+			currentScene = 0;
+			sceneToLoad = 0;
 		}
 
         // Use this for initialization
@@ -43,6 +51,10 @@ namespace SystemObjects
 		public void LoadScene(int sceneNum)
 		{
 			sceneToLoad = sceneNum;
+
+			Debug.Log("BFR currentScene: " + currentScene.ToString());
+			Debug.Log("BFR sceneToLoad: " + sceneToLoad.ToString());
+
 			if (currentScene != sceneToLoad)
 			{
 				StartCoroutine(LoadGameScene(false));
@@ -68,13 +80,16 @@ namespace SystemObjects
 			AllMenusScript.inst.OnSceneClosed(val);
 			yield return StartCoroutine(FadeIn());
 
+			currentScene = sceneToLoad;
 			AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(((ScenesNames)sceneToLoad).ToString("g"), LoadSceneMode.Single);
             while (!asyncLoad.isDone)
             {
                 yield return null;
             }
 
-			currentScene = sceneToLoad;
+			//currentScene = sceneToLoad;
+			Debug.Log("currentScene: " + currentScene.ToString());
+			Debug.Log("sceneToLoad: " + sceneToLoad.ToString());
 
 			yield return StartCoroutine(FadeOut());
 			AllMenusScript.inst.OnSceneOpened(val);
