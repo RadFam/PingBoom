@@ -18,10 +18,12 @@ namespace Effects
 
 		[SerializeField]
 		ParticleSystem winStarFall;
+		LevelManager levelManager;
 
 		public void PlayWinFinal(LevelManager LM)
 		{
-			Invoke("LM.StepNewLevel", 4.0f);
+			levelManager = LM;
+			Invoke("StepNewLevel", 4.0f);
 			winText.gameObject.SetActive(true);
 			winStarFall.gameObject.SetActive(true);
 			winStarFall.Play();
@@ -29,7 +31,8 @@ namespace Effects
         
 		public void PlayFailFinal(LevelManager LM)
 		{
-			Invoke("LM.StepNewLevel", 4.0f);
+			levelManager = LM;
+			Invoke("StepNewLevel", 4.0f);
 			failText.gameObject.SetActive(true);
 		}
 
@@ -39,6 +42,11 @@ namespace Effects
 			failText.gameObject.SetActive(false);
 			winStarFall.Stop();
 			winStarFall.gameObject.SetActive(false);
+		}
+
+		void StepNewLevel()
+		{
+			levelManager.StepNewLevel();
 		}
     }
 }

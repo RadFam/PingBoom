@@ -7,10 +7,13 @@ namespace GameObjects
 {
     public class PlayerMoveControl : MonoBehaviour
     {
+		AudioClip strikePuckSound;
+		AudioSource myAudio;
 		Rigidbody2D myRigid;
 		bool isSliding;
 		[SerializeField]
 		float viscousFriction;
+		[SerializeField]
 		float minVelocity;
 		float timerCheck = 0.1f;
 		float timerCnt;
@@ -32,6 +35,7 @@ namespace GameObjects
 		void Start()
 		{
 			levelManager = FindObjectOfType<LevelManager>();
+			myAudio = GetComponent<AudioSource>();
 		}
 
         // Update is called once per frame
@@ -46,6 +50,7 @@ namespace GameObjects
 					{
 						myRigid.velocity = new Vector2(0.0f, 0.0f);
 						isSliding = false;
+						levelManager.CheckLevelFinished(false);
 					}
 					timerCnt = 0.0f;
 				}
@@ -60,6 +65,7 @@ namespace GameObjects
 			if (!isSliding)
 			{
 				myRigid.AddForce(direction * force, ForceMode2D.Impulse);
+				myAudio.Play();
 				timerCnt = 0.0f;
 				isSliding = true;
 				levelManager.DecreaseShoot(-1);

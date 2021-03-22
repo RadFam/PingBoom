@@ -11,6 +11,13 @@ namespace SystemObjects
 {
     public class LevelManager : MonoBehaviour
     {
+		public AudioSource myAudioEffects;
+		public AudioSource myAudioMusic;
+		
+		public AudioClip explodeEffect;
+		public AudioClip victoryEffect;
+		public AudioClip failEffect;
+		public AudioClip metalEffect;
 		int maxShootsCount;
 		int leastShootsCount;
 		int currentScore;
@@ -18,6 +25,7 @@ namespace SystemObjects
 		int destrObjectsOnScene;
 
 		bool isVictory;
+		bool canCheckVictory;
 
 		HeaderPanelScript headerPanelScript;
 		EndLevelEffects endLevelEffects;
@@ -25,13 +33,13 @@ namespace SystemObjects
         void Start()
         {
 			int level = SceneLoaderScript.inst.CurrentScene;
-			Debug.Log("level: " + level.ToString());
 			maxShootsCount = GameManager.inst.everyLevelMaxShoots[level-1];
 			leastShootsCount = maxShootsCount;
 			currentScore = GameManager.inst.PreviousScore;
 
 			isVictory = false;
-			StartCoroutine(ConnectWithGlobalObject());
+			canCheckVictory = true;
+			//StartCoroutine(ConnectWithGlobalObject());
 
 			/*
 			headerPanelScript = FindObjectOfType<HeaderPanelScript>();
@@ -43,32 +51,37 @@ namespace SystemObjects
         }
 
 		
-		public bool CheckLevelFinished()
+		public bool CheckLevelFinished(bool sliding)
 		{
-			// Win!
-			if (destrObjectsOnScene == 0)
-			{
-				isVictory = true;
-				StartCoroutine(FinishLevelCoroutine());
-				return false;
-			}
+            if (canCheckVictory)
+            {
+                // Win!
+                if (destrObjectsOnScene == 0)
+                {
+                    isVictory = true;
+					canCheckVictory = false;
+					Debug.Log("CHECK VICTORY destrObjectsOnScene: " + destrObjectsOnScene.ToString());
+                    StartCoroutine(FinishLevelCoroutine());
+                    return false;
+                }
 
-			// Fail!
-			if (leastShootsCount == 0 && destrObjectsOnScene > 0)
-			{
-				// Start finishing coroutine
-				StartCoroutine(FinishLevelCoroutine());
-				return false;
-			}
+                // Fail!
+                if (leastShootsCount == 0 && destrObjectsOnScene > 0 && !sliding)
+                {
+                    // Start finishing coroutine
+					canCheckVictory = false;
+                    StartCoroutine(FinishLevelCoroutine());
+                    return false;
+                }
 
-			// Can proceed next
-			if (leastShootsCount > 0 && destrObjectsOnScene > 0)
-			{
-				// Do nothing
-				return false;
-			}
-
-			return false;
+                // Can proceed next
+                if (leastShootsCount > 0 && destrObjectsOnScene > 0)
+                {
+                    // Do nothing
+                    return false;
+                }
+            }
+            return false;
 			
 		}
 		
@@ -84,6 +97,8 @@ namespace SystemObjects
 			currentScore += addScore;
 			GameManager.inst.PreviousScore = currentScore;
 			destrObjectsOnScene += numOfDestructed;
+			Debug.Log("Renewed destrObjectsOnScene: " + destrObjectsOnScene.ToString());
+			CheckLevelFinished(true);
 		}
 
 		public void StepNewLevel()
@@ -104,16 +119,25 @@ namespace SystemObjects
 		{
 			if (isVictory)
 			{
+				myAudioMusic.Stop();
+				myAudioEffects.Stop();
+				myAudioEffects.clip = victoryEffect;
+				myAudioEffects.Play();
 				endLevelEffects.PlayWinFinal(this);
 			}
 			else
 			{
+				myAudioMusic.Stop();
+				myAudioEffects.Stop();
+				myAudioEffects.clip = failEffect;
+				myAudioEffects.Play();
 				endLevelEffects.PlayFailFinal(this);
 			}
 			
 			yield return null;
 		}
 
+		// Make this scene co-load from GameManager Script (!!!)
 		IEnumerator ConnectWithGlobalObject()
 		{
 			yield return new WaitForSeconds(0.1f);
@@ -121,8 +145,41 @@ namespace SystemObjects
 			headerPanelScript = FindObjectOfType<HeaderPanelScript>();
 			headerPanelScript.SetInitScore(leastShootsCount, currentScore);
 
+			ExplodeTargetMeta [] tmpDestrObj = FindObjectsOfType<ExplodeTargetMeta>();
 			destrObjectsOnScene = FindObjectsOfType<ExplodeTargetMeta>().Length;
+			for (int i = 0; i < destrObjectsOnScene; ++i)
+			{
+				tmpDestrObj[i].levelManager = this;
+			}
 			endLevelEffects = FindObjectOfType<EndLevelEffects>();
+		}
+
+		public void ConnectWithGlobalObjectFunc()
+		{
+			headerPanelScript = FindObjectOfType<HeaderPanelScript>();
+			headerPanelScript.SetInitScore(leastShootsCount, currentScore);
+
+			ExplodeTargetMeta [] tmpDestrObj = FindObjectsOfType<ExplodeTargetMeta>();
+			destrObjectsOnScene = FindObjectsOfType<ExplodeTargetMeta>().Length;
+			Debug.Log("destrObjectsOnScene: " + destrObjectsOnScene.ToString());
+			for (int i = 0; i < destrObjectsOnScene; ++i)
+			{
+				tmpDestrObj[i].levelManager = this;
+			}
+			endLevelEffects = FindObjectOfType<EndLevelEffects>();
+		}
+
+		public void PlayEffect(GameManager.EffectSounds effect)
+		{
+			if (effect == GameManager.EffectSounds.Explosion)
+			{
+				myAudioEffects.clip = explodeEffect;
+			}
+			if (effect == GameManager.EffectSounds.Steel)
+			{
+				myAudioEffects.clip = metalEffect;
+			}
+			myAudioEffects.Play();
 		}
     }
 }

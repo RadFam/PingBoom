@@ -52,9 +52,6 @@ namespace SystemObjects
 		{
 			sceneToLoad = sceneNum;
 
-			Debug.Log("BFR currentScene: " + currentScene.ToString());
-			Debug.Log("BFR sceneToLoad: " + sceneToLoad.ToString());
-
 			if (currentScene != sceneToLoad)
 			{
 				StartCoroutine(LoadGameScene(false));
@@ -87,12 +84,14 @@ namespace SystemObjects
                 yield return null;
             }
 
-			//currentScene = sceneToLoad;
-			Debug.Log("currentScene: " + currentScene.ToString());
-			Debug.Log("sceneToLoad: " + sceneToLoad.ToString());
-
 			yield return StartCoroutine(FadeOut());
 			AllMenusScript.inst.OnSceneOpened(val);
+
+			if (currentScene > 0)
+			{
+				LevelManager LM = FindObjectOfType<LevelManager>();
+				LM.ConnectWithGlobalObjectFunc();
+			}
 		}
 
 		IEnumerator FadeIn()

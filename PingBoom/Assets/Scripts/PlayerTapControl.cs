@@ -66,7 +66,7 @@ namespace Controls
                 RaycastHit2D hit = Physics2D.Raycast(cam.ScreenToWorldPoint(Input.mousePosition), Vector3.forward);
                 if (hit.collider != null && hit.transform.CompareTag("Player"))
                 {
-					canProceed = !levelManager.CheckLevelFinished();
+					canProceed = !levelManager.CheckLevelFinished(false);
 					if (!canProceed)
 					{
 						return;

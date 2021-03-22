@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Effects;
+using SystemObjects;
 
 namespace GameObjects
 {
@@ -10,6 +11,8 @@ namespace GameObjects
 		[SerializeField]
 		protected int scoreCount;
 		protected ExplosionEffectScript explodePart;
+
+		public LevelManager levelManager;
         // Use this for initialization
         protected virtual void Start()
 		{

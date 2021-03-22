@@ -11,6 +11,8 @@ namespace SystemObjects
     {
 		public static GameManager inst;
 
+		public enum EffectSounds {Explosion, Victory, Fail, Concrete, Steel, Wood};
+
 		#region Global system params
         // Use this for initialization
 		float musicVol;

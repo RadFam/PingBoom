@@ -9,21 +9,25 @@ namespace GameObjects
     {
 
         SpriteRenderer mySpriteRenderer;
+		bool isExploded;
 		
 		// Use this for initialization
         protected override void Start()
         {
 			base.Start();
 			mySpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+			isExploded = false;
         }
 
         void OnTriggerEnter2D(Collider2D col)
 		{
-			if (col.gameObject.CompareTag("Player"))
+			if (!isExploded && col.gameObject.CompareTag("Player"))
 			{
-				LevelManager lm = FindObjectOfType<LevelManager>();
-				lm.AddNewScore(scoreCount, 1);
+				Debug.Log(gameObject.name + " is exploded");
+				isExploded = true;
+				levelManager.AddNewScore(scoreCount, -1);
 				SetItselfInvisible();
+				levelManager.PlayEffect(GameManager.EffectSounds.Explosion);
 				SetExplosion();
 			}
 		}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SystemObjects;
 
 namespace GameObjects
 {
@@ -48,6 +49,7 @@ namespace GameObjects
 		{
 			if (col.gameObject.CompareTag("Player"))
 			{
+				levelManager.AddNewScore(scoreCount, -1);
 				SetItselfInvisible();
 				SetExplosion();
 			}
