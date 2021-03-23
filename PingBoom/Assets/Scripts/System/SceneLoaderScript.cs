@@ -96,11 +96,39 @@ namespace SystemObjects
 
 		IEnumerator FadeIn()
 		{
+			fadeAlpha = 0.0f;
+			Color blackC = Color.black;
+
+			for (int i = 0; i < 50; ++i)
+			{
+				blackC = new Color (0.0f, 0.0f, 0.0f, fadeAlpha);
+				fadeAlpha += 0.02f;
+				fadeImage.color = blackC;
+				yield return new WaitForSeconds(0.01f);
+			}
+
+			blackC = new Color (0.0f, 0.0f, 0.0f, 1.0f);
+			fadeImage.color = blackC;
+
 			yield return null;
 		}
 
 		IEnumerator FadeOut()
 		{
+			fadeAlpha = 1.0f;
+			Color blackC = Color.black;
+
+			for (int i = 0; i < 50; ++i)
+			{
+				blackC = new Color (0.0f, 0.0f, 0.0f, fadeAlpha);
+				fadeAlpha -= 0.02f;
+				fadeImage.color = blackC;
+				yield return new WaitForSeconds(0.01f);
+			}
+
+			blackC = new Color (0.0f, 0.0f, 0.0f, 0.0f);
+			fadeImage.color = blackC;
+
 			yield return null;
 		}
     }
