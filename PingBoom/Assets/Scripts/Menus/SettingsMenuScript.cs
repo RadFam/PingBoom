@@ -62,7 +62,7 @@ namespace AllMenusUI
 		void AlterSoundVol(float value)
 		{
 			musicVol = value;
-			// Send data to SystemManager
+			// Send data to GameManager
 			//.....
 			GameManager.inst.MusicVol = musicVol;
 		}
@@ -70,7 +70,7 @@ namespace AllMenusUI
 		void AlterEffectsVol(float value)
 		{
 			effectsVol = value;
-			// Send data to SystemManager
+			// Send data to GameManager
 			//.....
 			GameManager.inst.EffectsVol = effectsVol;
 		}

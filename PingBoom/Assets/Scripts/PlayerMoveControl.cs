@@ -10,6 +10,7 @@ namespace GameObjects
 		AudioClip strikePuckSound;
 		AudioSource myAudio;
 		Rigidbody2D myRigid;
+		Collider2D myCollider;
 		bool isSliding;
 		[SerializeField]
 		float viscousFriction;
@@ -28,6 +29,7 @@ namespace GameObjects
         void Awake()
         {
 			myRigid = gameObject.GetComponent<Rigidbody2D>();
+			myCollider = gameObject.GetComponent<Collider2D>();
 			isSliding = false;
 			timerCnt = 0.0f;
         }
@@ -70,6 +72,12 @@ namespace GameObjects
 				isSliding = true;
 				levelManager.DecreaseShoot(-1);
 			}
+		}
+
+		public void DeathStop()
+		{
+			myCollider.enabled = false;
+			isSliding = false;
 		}
     }
 }
