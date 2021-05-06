@@ -28,6 +28,7 @@ namespace GameObjects
 		{
 			if (col.gameObject.CompareTag("Player"))
 			{
+				col.gameObject.GetComponent<PlayerMoveControl>().DeathStop();
 				levelManager.PlayEffect(GameManager.EffectSounds.Steel);
 				levelManager.PlayerIsDead();
 			}

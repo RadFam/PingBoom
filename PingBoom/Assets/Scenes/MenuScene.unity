@@ -210,6 +210,66 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224638635219376240, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224638635219376240, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224638635219376240, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224638635219376240, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224229624209610578, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224229624209610578, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224229624209610578, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224229624209610578, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224064416283509742, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224064416283509742, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224064416283509742, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224064416283509742, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 682ae44f581c53e4b8e00328c4796838, type: 2}
   m_IsPrefabAsset: 0

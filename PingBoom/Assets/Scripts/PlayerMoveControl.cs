@@ -78,6 +78,7 @@ namespace GameObjects
 		{
 			myCollider.enabled = false;
 			isSliding = false;
+			myRigid.velocity = new Vector2(0.0f, 0.0f);
 		}
     }
 }
