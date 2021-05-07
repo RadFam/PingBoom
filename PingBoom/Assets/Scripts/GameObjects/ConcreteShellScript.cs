@@ -28,8 +28,8 @@ namespace GameObjects
 				currLife -= 1;
 				if (currLife >= 0)
 				{
-					mySpriteRenderer.sprite = shellStages[currLife];
-				}
+					mySpriteRenderer.sprite = shellStages[shellStages.Count - 1 - currLife];
+				} 
 				else
 				{
 					Destroy(gameObject);
