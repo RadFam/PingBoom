@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableLevel: 5
-  everyLevelMaxShoots: 0500000005000000050000000500000005000000
+  everyLevelMaxShoots: 0200000005000000050000000500000005000000
 --- !u!114 &1998259566
 MonoBehaviour:
   m_ObjectHideFlags: 0
