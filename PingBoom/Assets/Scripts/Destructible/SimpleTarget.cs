@@ -23,7 +23,7 @@ namespace GameObjects
 		{
 			if (!isExploded && col.gameObject.CompareTag("Player"))
 			{
-				Debug.Log(gameObject.name + " is exploded");
+				//Debug.Log(gameObject.name + " is exploded");
 				isExploded = true;
 				levelManager.AddNewScore(scoreCount, -1);
 				SetItselfInvisible();

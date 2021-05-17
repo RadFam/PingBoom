@@ -146,6 +146,15 @@ namespace SystemObjects
             }
 		}
 
+		public void UpdateSoundSettings()
+		{
+			LevelManager LM = FindObjectOfType<LevelManager>();
+			if (LM)
+			{
+				LM.UpdateSoundSettings();
+			}
+		}
+
 		public void ExitGame()
 		{
 			SaveData();

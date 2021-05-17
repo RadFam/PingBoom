@@ -65,6 +65,7 @@ namespace AllMenusUI
 			// Send data to GameManager
 			//.....
 			GameManager.inst.MusicVol = musicVol;
+			GameManager.inst.UpdateSoundSettings();
 		}
 
 		void AlterEffectsVol(float value)
@@ -73,6 +74,7 @@ namespace AllMenusUI
 			// Send data to GameManager
 			//.....
 			GameManager.inst.EffectsVol = effectsVol;
+			GameManager.inst.UpdateSoundSettings();
 		}
 
 		public void OnChkBoxClick()

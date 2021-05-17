@@ -47,6 +47,10 @@ namespace SystemObjects
 
 			player = FindObjectOfType<PlayerMoveControl>();
 			playerTap = FindObjectOfType<PlayerTapControl>();
+
+			// On load scene make correct sound and effects volume
+			myAudioEffects.volume = GameManager.inst.EffectsVol;
+			myAudioMusic.volume = GameManager.inst.MusicVol;
         }
 
 		
@@ -57,6 +61,7 @@ namespace SystemObjects
                 // Win!
                 if (destrObjectsOnScene == 0)
                 {
+					myAudioEffects.Stop();
                     isVictory = true;
 					canCheckVictory = false;
                     StartCoroutine(FinishLevelCoroutine());
@@ -118,7 +123,9 @@ namespace SystemObjects
 			if (isVictory)
 			{
 				myAudioMusic.Stop();
+				//Debug.Log("Try to stop effect begin");
 				myAudioEffects.Stop();
+				//Debug.Log("Try to stop effect end");
 				myAudioEffects.clip = victoryEffect;
 				myAudioEffects.Play();
 				endLevelEffects.PlayWinFinal(this);
@@ -151,23 +158,33 @@ namespace SystemObjects
 
 		public void PlayEffect(GameManager.EffectSounds effect)
 		{
-			if (effect == GameManager.EffectSounds.Explosion)
+			if (canCheckVictory)
 			{
-				myAudioEffects.clip = explodeEffect;
+				if (effect == GameManager.EffectSounds.Explosion)
+				{
+					//Debug.Log("Explode starts");
+					myAudioEffects.clip = explodeEffect;
+				}
+				if (effect == GameManager.EffectSounds.Steel)
+				{
+					myAudioEffects.clip = metalEffect;
+				}
+				if (effect == GameManager.EffectSounds.Wood)
+				{
+					myAudioEffects.clip = woodEffect;
+				}
+				if (effect == GameManager.EffectSounds.Concrete)
+				{
+					myAudioEffects.clip = concreteEffect;
+				}
+				myAudioEffects.Play();
 			}
-			if (effect == GameManager.EffectSounds.Steel)
-			{
-				myAudioEffects.clip = metalEffect;
-			}
-			if (effect == GameManager.EffectSounds.Wood)
-			{
-				myAudioEffects.clip = woodEffect;
-			}
-			if (effect == GameManager.EffectSounds.Concrete)
-			{
-				myAudioEffects.clip = concreteEffect;
-			}
-			myAudioEffects.Play();
+		}
+
+		public void UpdateSoundSettings()
+		{
+			myAudioEffects.volume = GameManager.inst.EffectsVol;
+			myAudioMusic.volume = GameManager.inst.MusicVol;
 		}
 
 		public void PlayerIsDead()
