@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +9,9 @@ namespace AllMenusUI
     public class LevelMenuScript : MonoBehaviour
     {
         [SerializeField]
+        MenuCtrlManager MCM;
+
+        [SerializeField]
         List<Button> myButtons;
         // Use this for initialization
         public void OnEnable()
@@ -18,10 +21,14 @@ namespace AllMenusUI
 
         public void OnDisable()
         {
-            OnClose();
+            OnClose(false);
         }
-        public void OnClose()
+        public void OnClose(bool playEff)
         {
+            if (playEff)
+            {
+                MCM.ButtonClickPlay();
+            }
             gameObject.SetActive(false);
         }
         public void OnOpen()

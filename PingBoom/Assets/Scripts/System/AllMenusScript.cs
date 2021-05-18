@@ -79,6 +79,9 @@ namespace AllMenusUI
 		}
 		void OnStartSceneClosed()
 		{
+			MenuCtrlManager MCM = FindObjectOfType<MenuCtrlManager>();
+			MCM.StopAllPlay();
+
 			startSceneOpen = false;
 			levelSceneOpen = true;
 			MMS.gameObject.SetActive(false);
@@ -90,6 +93,8 @@ namespace AllMenusUI
 			startSceneOpen = true;
 			levelSceneOpen = false;
 			MMS.gameObject.SetActive(true);
+
+			MMS.MCM = FindObjectOfType<MenuCtrlManager>();
 		}
 
 		void OnLevelSceneClosed()

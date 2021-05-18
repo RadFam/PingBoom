@@ -21,10 +21,10 @@ namespace GameObjects
         {
 			currStage = myStages;
 			spriteColorsList = new List<Color>();
-			spriteColorsList.Add(new Color(0.0f, 1.0f, 0.0f, 1.0f));
-			spriteColorsList.Add(new Color(1.0f, 0.9f, 0.0f, 1.0f));
-			spriteColorsList.Add(new Color(1.0f, 0.5f, 0.0f, 1.0f));
-			spriteColorsList.Add(new Color(1.0f, 0.0f, 0.0f, 1.0f));
+			spriteColorsList.Add(new Color(0.45f, 0.8f, 0.3f, 1.0f));
+			spriteColorsList.Add(new Color(1.0f, 0.8f, 0.0f, 1.0f));
+			spriteColorsList.Add(new Color(0.95f, 0.61f, 0.04f, 1.0f));
+			spriteColorsList.Add(new Color(0.91f, 0.42f, 0.09f, 1.0f));
 			mySpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 			myCollider = gameObject.GetComponent<Collider2D>();
 			myCollider.isTrigger = false;

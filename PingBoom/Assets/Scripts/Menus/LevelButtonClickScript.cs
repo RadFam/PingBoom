@@ -14,7 +14,17 @@ namespace AllMenusUI
         // Use this for initialization
 		public void OnClick()
 		{
-			SceneLoaderScript.inst.LoadScene(myNum);
+            MenuCtrlManager MCM = FindObjectOfType<MenuCtrlManager>();
+            if (MCM)
+            {
+                MCM.ButtonClickPlay();
+            }
+			Invoke("LoadSceneFunc", 0.2f);
 		}
+
+        void LoadSceneFunc()
+        {
+            SceneLoaderScript.inst.LoadScene(myNum);
+        }
     }
 }

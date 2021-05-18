@@ -60,7 +60,7 @@ namespace SystemObjects
 			set {saveScoreProgress = value;}
 		}
 
-        void Start()
+        void Awake()
         {
 			if (inst == null)
 			{
@@ -81,16 +81,17 @@ namespace SystemObjects
 			savebleData.Add("ProcessVol", null);
 
 			// At the end
-			LoadData();
+			//LoadData();
         }
 
         // Update is called once per frame
 		public void LoadData()
 		{
 			settingsFilenamePath = Path.Combine(Application.persistentDataPath, settingsFilename);
-            //Debug.Log("Save in " + pathFull);
+            Debug.Log("Save in " + settingsFilenamePath);
             if (File.Exists(settingsFilenamePath))
             {
+				Debug.Log("Path is really exists?");
                 using (FileStream stream = File.Open(settingsFilenamePath, FileMode.Create))
                 {
                     BinaryFormatter formatter = new BinaryFormatter();
@@ -152,6 +153,20 @@ namespace SystemObjects
 			if (LM)
 			{
 				LM.UpdateSoundSettings();
+			}
+			else
+			{
+				MenuCtrlManager MCM = FindObjectOfType<MenuCtrlManager>();
+				if (MCM)
+				{
+					MCM.UpdateSoundSettings();
+				}
+			}
+
+			PauseMenuScript PMS = FindObjectOfType<PauseMenuScript>();
+			if (PMS)
+			{
+				PMS.UpdateSoundSettings();
 			}
 		}
 
