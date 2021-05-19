@@ -34,6 +34,8 @@ namespace GameObjects
         void Start()
         {
 			linearMove = false;
+			myRigid = GetComponent<Rigidbody2D>();
+
 			movePointsMove = movePointsPool.MovePath(pathNum);
 			if (movePointsMove != null && movePointsMove.childVol > 1)
 			{
@@ -42,8 +44,9 @@ namespace GameObjects
 				nextPos = new Vector2(nextPosition.position.x, nextPosition.position.y);
 				moveVct = nextPos - myRigid.position;
 				moveVct.Normalize();
-			}
-			myRigid = GetComponent<Rigidbody2D>();
+			}			
+			Debug.Log("myRigid: " + myRigid);
+
         }
 
         // Update is called once per frame

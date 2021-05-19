@@ -16,6 +16,11 @@ namespace AllMenusUI
         // Use this for initialization
         public void OnEnable()
         {
+            MenuCtrlManager MCMc = FindObjectOfType<MenuCtrlManager>();
+            if (MCMc)
+            {
+                MCM = MCMc;
+            }
             OnOpen();
         }
 

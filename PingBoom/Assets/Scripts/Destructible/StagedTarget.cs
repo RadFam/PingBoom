@@ -29,6 +29,8 @@ namespace GameObjects
 			myCollider = gameObject.GetComponent<Collider2D>();
 			myCollider.isTrigger = false;
 
+			mySpriteRenderer.color = spriteColorsList[spriteColorsList.Count - currStage];
+
 			base.Start();
         }
 

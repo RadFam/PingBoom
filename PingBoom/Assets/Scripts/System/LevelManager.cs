@@ -42,6 +42,8 @@ namespace SystemObjects
 			leastShootsCount = maxShootsCount;
 			currentScore = GameManager.inst.PreviousScore;
 
+			GameManager.inst.AvailableLevel = Mathf.Max(level, GameManager.inst.AvailableLevel);
+
 			isVictory = false;
 			canCheckVictory = true;
 
