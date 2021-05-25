@@ -36,16 +36,19 @@ namespace GameObjects
 			linearMove = false;
 			myRigid = GetComponent<Rigidbody2D>();
 
-			movePointsMove = movePointsPool.MovePath(pathNum);
-			if (movePointsMove != null && movePointsMove.childVol > 1)
-			{
-				linearMove = true;
-				nextPosition = movePointsMove.GetNextPoint();
-				nextPos = new Vector2(nextPosition.position.x, nextPosition.position.y);
-				moveVct = nextPos - myRigid.position;
-				moveVct.Normalize();
-			}			
-			Debug.Log("myRigid: " + myRigid);
+            if (pathNum != -1)
+            {
+                movePointsMove = movePointsPool.MovePath(pathNum);
+                if (movePointsMove != null && movePointsMove.childVol > 1)
+                {
+                    linearMove = true;
+                    nextPosition = movePointsMove.GetNextPoint();
+                    nextPos = new Vector2(nextPosition.position.x, nextPosition.position.y);
+                    moveVct = nextPos - myRigid.position;
+                    moveVct.Normalize();
+                }
+                Debug.Log("myRigid: " + myRigid);
+            }	
 
         }
 

@@ -767,8 +767,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1f9c4eca7f800419764e794644cbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableLevel: 5
-  everyLevelMaxShoots: 0200000003000000030000000400000003000000
+  availableLevel: 6
+  everyLevelMaxShoots: 020000000300000003000000040000000300000001000000
 --- !u!114 &1998259566
 MonoBehaviour:
   m_ObjectHideFlags: 0

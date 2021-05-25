@@ -11,7 +11,7 @@ namespace SystemObjects
     {
 		public static SceneLoaderScript inst;
 
-		public enum ScenesNames {MenuScene, GameScene, GameScene2, GameScene3, GameScene4, GameScene5}
+		public enum ScenesNames {MenuScene, GameScene, GameScene2, GameScene3, GameScene4, GameScene5, GameScene6}
 		[SerializeField]
 		int currentScene;
 		[SerializeField]
