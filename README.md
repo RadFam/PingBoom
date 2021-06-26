@@ -4,8 +4,8 @@ This is a mobile game in which you, controlling the puck, must destroy the red t
 
 
 # Gameplay gifs:
-![Image](gif_1.gif)
+<img src="/gif_1.gif" width="300" height="520">
 
-![Image](gif_3.gif)
+<img src="/gif_3.gif" width="300" height="520">
 
-![Image](gif_5.gif)
+<img src="/gif_4.gif" width="300" height="520">
