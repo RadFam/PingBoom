@@ -1,6 +1,6 @@
 # PingBoom Mobile Game
 
-This is a mobile game in which you, controlling the puck, must destroy the red targets in the allotted number of steps.
+This is a mobile game in which you, controlling the puck, must destroy the red targets in the allotted number of steps. Now it is available seven levels.
 
 
 # Gameplay gifs:
