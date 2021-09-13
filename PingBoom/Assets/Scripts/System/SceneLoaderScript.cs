@@ -11,7 +11,9 @@ namespace SystemObjects
     {
 		public static SceneLoaderScript inst;
 
-		public enum ScenesNames {MenuScene, GameScene, GameScene2, GameScene3, GameScene4, GameScene5}
+		public enum ScenesNames {MenuScene, GameScene, GameScene2, GameScene3, GameScene4, GameScene5, GameScene6, GameScene7}
+		[SerializeField]
+		int maxFieldNum;
 		[SerializeField]
 		int currentScene;
 		[SerializeField]
@@ -60,12 +62,12 @@ namespace SystemObjects
 
 		public void LoadNextScene()
 		{
-			if (currentScene >= 1 && currentScene < 28)
+			if (currentScene >= 1 && currentScene < maxFieldNum)
 			{
 				sceneToLoad = currentScene + 1;
 				StartCoroutine(LoadGameScene(true));
 			}
-			if (currentScene == 28)
+			if (currentScene == maxFieldNum)
 			{
 				sceneToLoad = 0;
 				StartCoroutine(LoadGameScene(false));
@@ -99,10 +101,10 @@ namespace SystemObjects
 			fadeAlpha = 0.0f;
 			Color blackC = Color.black;
 
-			for (int i = 0; i < 50; ++i)
+			for (int i = 0; i < 25; ++i)
 			{
 				blackC = new Color (0.0f, 0.0f, 0.0f, fadeAlpha);
-				fadeAlpha += 0.02f;
+				fadeAlpha += 0.04f;
 				fadeImage.color = blackC;
 				yield return new WaitForSeconds(0.01f);
 			}
@@ -118,10 +120,10 @@ namespace SystemObjects
 			fadeAlpha = 1.0f;
 			Color blackC = Color.black;
 
-			for (int i = 0; i < 50; ++i)
+			for (int i = 0; i < 25; ++i)
 			{
 				blackC = new Color (0.0f, 0.0f, 0.0f, fadeAlpha);
-				fadeAlpha -= 0.02f;
+				fadeAlpha -= 0.04f;
 				fadeImage.color = blackC;
 				yield return new WaitForSeconds(0.01f);
 			}

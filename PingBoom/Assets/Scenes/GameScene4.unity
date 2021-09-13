@@ -986,8 +986,8 @@ MonoBehaviour:
   victoryEffect: {fileID: 8300000, guid: f4e8f9944949df5498399369a7a1c40b, type: 3}
   failEffect: {fileID: 8300000, guid: 3f651763ecff235449c2f0dee2ccd3df, type: 3}
   metalEffect: {fileID: 8300000, guid: 659cfb61b558de24cafe0848e9cbdde6, type: 3}
-  woodEffect: {fileID: 0}
-  concreteEffect: {fileID: 0}
+  woodEffect: {fileID: 8300000, guid: 228e27e74c600244c848a66c573d5aae, type: 3}
+  concreteEffect: {fileID: 8300000, guid: 7b966d7a9a2bb7f4c865962adf80559a, type: 3}
 --- !u!114 &917075674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6521,8 +6521,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbee29f51fde1349afaa99935845975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viscousFriction: 0.4
-  minVelocity: 0.1
+  viscousFriction: 1
+  minVelocity: 1
 --- !u!114 &1996826595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6534,7 +6534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab6af35bb526014392854319cea6c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strengthForce: 4
+  strengthForce: 8
 --- !u!82 &1996826596
 AudioSource:
   m_ObjectHideFlags: 0

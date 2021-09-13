@@ -81,7 +81,7 @@ namespace SystemObjects
 			savebleData.Add("ProcessVol", null);
 
 			// At the end
-			//LoadData();
+			LoadData();
         }
 
         // Update is called once per frame
@@ -92,7 +92,7 @@ namespace SystemObjects
             if (File.Exists(settingsFilenamePath))
             {
 				Debug.Log("Path is really exists?");
-                using (FileStream stream = File.Open(settingsFilenamePath, FileMode.Create))
+                using (FileStream stream = File.Open(settingsFilenamePath, FileMode.Open))
                 {
                     BinaryFormatter formatter = new BinaryFormatter();
                 	savebleData = (Dictionary<string, object>)formatter.Deserialize(stream);
@@ -113,9 +113,9 @@ namespace SystemObjects
             }
 			else
 			{
-				musicVol = 1.0f;
-				effectsVol = 1.0f;
-				availableLevel = 5;
+				musicVol = 0.5f;
+				effectsVol = 0.5f;
+				availableLevel = 1;
 				previousScore = 0;
 				saveScoreProgress = true;
 			}

@@ -455,6 +455,70 @@ Prefab:
       propertyPath: MCM
       value: 
       objectReference: {fileID: 381323212}
+    - target: {fileID: 1645683868543040, guid: 682ae44f581c53e4b8e00328c4796838, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224093751884810718, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224093751884810718, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224093751884810718, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 103.333336
+      objectReference: {fileID: 0}
+    - target: {fileID: 224093751884810718, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -57.599976
+      objectReference: {fileID: 0}
+    - target: {fileID: 224078029190634382, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224078029190634382, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224078029190634382, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 385
+      objectReference: {fileID: 0}
+    - target: {fileID: 224078029190634382, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -57.599976
+      objectReference: {fileID: 0}
+    - target: {fileID: 224640023278221652, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224640023278221652, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224640023278221652, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 641.6667
+      objectReference: {fileID: 0}
+    - target: {fileID: 224640023278221652, guid: 682ae44f581c53e4b8e00328c4796838,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -57.599976
+      objectReference: {fileID: 0}
     - target: {fileID: 224638635219376240, guid: 682ae44f581c53e4b8e00328c4796838,
         type: 2}
       propertyPath: m_AnchorMin.y
@@ -751,6 +815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6ebde821bc2b341acaeb10864d6072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxFieldNum: 7
   currentScene: 0
   sceneToLoad: 0
   fadeImage: {fileID: 1685123479}
@@ -767,8 +832,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1f9c4eca7f800419764e794644cbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableLevel: 5
-  everyLevelMaxShoots: 0200000003000000030000000400000003000000
+  availableLevel: 7
+  everyLevelMaxShoots: 02000000030000000300000004000000030000000200000005000000
 --- !u!114 &1998259566
 MonoBehaviour:
   m_ObjectHideFlags: 0
