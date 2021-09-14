@@ -90,9 +90,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shellStages:
-  - {fileID: 21300000, guid: aa063f73c9a75d84f82eb331856a631f, type: 3}
-  - {fileID: 21300000, guid: e4282de864fad9145a8d1d9944160905, type: 3}
-  - {fileID: 21300000, guid: 556e0c7231c7dae44b29065118d9de02, type: 3}
+  - {fileID: 21300000, guid: 4cbf4ee3b2124194db1a3508841c0791, type: 3}
+  - {fileID: 21300002, guid: 4cbf4ee3b2124194db1a3508841c0791, type: 3}
+  - {fileID: 21300004, guid: 4cbf4ee3b2124194db1a3508841c0791, type: 3}
 --- !u!212 &212864578372115398
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -128,7 +128,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: aa063f73c9a75d84f82eb331856a631f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4cbf4ee3b2124194db1a3508841c0791, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

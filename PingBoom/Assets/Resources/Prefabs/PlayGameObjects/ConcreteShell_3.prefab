@@ -79,7 +79,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 1.9705127, y: 1.9701923}
     newSize: {x: 1.5, y: 1.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -117,9 +117,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shellStages:
-  - {fileID: 21300000, guid: 80c81f56e656bac4494bbce5ba6cc9d0, type: 3}
-  - {fileID: 21300000, guid: b8e84353e9b20624392d860e5add5282, type: 3}
-  - {fileID: 21300000, guid: b7a5e7f2d0e5f5b478d7e4b70a0d00a2, type: 3}
+  - {fileID: 21300012, guid: 4cbf4ee3b2124194db1a3508841c0791, type: 3}
+  - {fileID: 21300014, guid: 4cbf4ee3b2124194db1a3508841c0791, type: 3}
+  - {fileID: 21300016, guid: 4cbf4ee3b2124194db1a3508841c0791, type: 3}
 --- !u!212 &212584565162214982
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -155,7 +155,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 80c81f56e656bac4494bbce5ba6cc9d0, type: 3}
+  m_Sprite: {fileID: 21300012, guid: 4cbf4ee3b2124194db1a3508841c0791, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
