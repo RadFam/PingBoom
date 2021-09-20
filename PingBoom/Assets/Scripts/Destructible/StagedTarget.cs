@@ -16,6 +16,9 @@ namespace GameObjects
 		Collider2D myCollider;
 
 		int currStage;
+		bool isExploded;
+
+		PhysicsMaterial2D myMaterial;
         // Use this for initialization
         protected override void Start()
         {
@@ -30,6 +33,8 @@ namespace GameObjects
 			myCollider.isTrigger = false;
 
 			mySpriteRenderer.color = spriteColorsList[spriteColorsList.Count - currStage];
+			isExploded = false;
+			myMaterial = gameObject.GetComponent<Rigidbody2D>().sharedMaterial;
 
 			base.Start();
         }
@@ -43,14 +48,17 @@ namespace GameObjects
 				if (currStage == 1)
 				{
 					myCollider.isTrigger = true;
+					myMaterial = null;
 				}
 			}
 		}
 
 		void OnTriggerEnter2D(Collider2D col)
 		{
-			if (col.gameObject.CompareTag("Player"))
+			if (!isExploded && col.gameObject.CompareTag("Player"))
 			{
+				isExploded = true;
+				Debug.Log("Staged target, minus ONE destTarget");
 				levelManager.AddNewScore(scoreCount, -1);
 				SetItselfInvisible();
 				SetExplosion();

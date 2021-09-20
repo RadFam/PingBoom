@@ -101,6 +101,7 @@ namespace SystemObjects
 			headerPanelScript.SetNewScore(currentScore, currentScore + addScore);
 			currentScore += addScore;
 			GameManager.inst.PreviousScore = currentScore;
+			Debug.Log("Add new destructed objects: " + numOfDestructed);
 			destrObjectsOnScene += numOfDestructed;
 			CheckLevelFinished(true);
 		}
@@ -151,6 +152,7 @@ namespace SystemObjects
 
 			ExplodeTargetMeta [] tmpDestrObj = FindObjectsOfType<ExplodeTargetMeta>();
 			destrObjectsOnScene = FindObjectsOfType<ExplodeTargetMeta>().Length;
+			Debug.Log("Destructible objects: " + destrObjectsOnScene);
 			for (int i = 0; i < destrObjectsOnScene; ++i)
 			{
 				tmpDestrObj[i].levelManager = this;

@@ -25,6 +25,7 @@ namespace GameObjects
 			{
 				//Debug.Log(gameObject.name + " is exploded");
 				isExploded = true;
+				Debug.Log("Simple target, minus ONE destTarget");
 				levelManager.AddNewScore(scoreCount, -1);
 				SetItselfInvisible();
 				levelManager.PlayEffect(GameManager.EffectSounds.Explosion);

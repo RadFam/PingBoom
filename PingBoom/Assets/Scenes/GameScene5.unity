@@ -1517,6 +1517,16 @@ Prefab:
       propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 50729356728795862, guid: ef37903bb0f38c2409dbaba89b77a229,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 58522506191914892, guid: ef37903bb0f38c2409dbaba89b77a229,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef37903bb0f38c2409dbaba89b77a229, type: 2}
   m_IsPrefabAsset: 0
