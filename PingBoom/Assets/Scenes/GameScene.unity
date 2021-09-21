@@ -526,6 +526,16 @@ Prefab:
       propertyPath: m_Name
       value: DestructibleTarget (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 50213073581023672, guid: f58b611007c6aaa4e888ce850337dfd4,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 91db220634f82f549a6552f8e9b04852, type: 2}
+    - target: {fileID: 58446418674600552, guid: f58b611007c6aaa4e888ce850337dfd4,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 91db220634f82f549a6552f8e9b04852, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f58b611007c6aaa4e888ce850337dfd4, type: 2}
   m_IsPrefabAsset: 0
@@ -674,6 +684,16 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: c74a821052d14ef4ba84548db4fd29e3,
         type: 3}
+    - target: {fileID: 58446418674600552, guid: f58b611007c6aaa4e888ce850337dfd4,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 91db220634f82f549a6552f8e9b04852, type: 2}
+    - target: {fileID: 50213073581023672, guid: f58b611007c6aaa4e888ce850337dfd4,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 91db220634f82f549a6552f8e9b04852, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f58b611007c6aaa4e888ce850337dfd4, type: 2}
   m_IsPrefabAsset: 0

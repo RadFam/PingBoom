@@ -58,8 +58,10 @@ namespace GameObjects
 				}
 
 				// Add viscous friction
-				myRigid.AddForce(new Vector2(myRigid.velocity.x * (-1.0f) * viscousFriction, myRigid.velocity.y * (-1.0f) * viscousFriction));
+				//myRigid.AddForce(new Vector2(myRigid.velocity.x * (-1.0f) * viscousFriction, myRigid.velocity.y * (-1.0f) * viscousFriction));
+				//Debug.Log("My velocity: " + myRigid.velocity);
 			}
+			myRigid.AddForce(new Vector2(myRigid.velocity.x * (-1.0f) * viscousFriction, myRigid.velocity.y * (-1.0f) * viscousFriction));
         }
 
 		public void StrikePuck(Vector2 direction, float force)
