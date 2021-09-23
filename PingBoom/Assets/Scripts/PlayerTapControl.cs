@@ -38,7 +38,7 @@ namespace Controls
 			myForceTail = transform.GetChild(0).gameObject.GetComponent<ForceTailScript>();
 			cam = Camera.main;
 			isTapped = false;
-			canProceed = true;
+			canProceed = false;
         }
 
         // Update is called once per frame

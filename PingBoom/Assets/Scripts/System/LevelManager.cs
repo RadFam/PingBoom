@@ -20,6 +20,9 @@ namespace SystemObjects
 		public AudioClip metalEffect;
 		public AudioClip woodEffect;
 		public AudioClip concreteEffect;
+
+		[SerializeField]
+		LevelInfoPanel levelInfoHints;
 		int maxShootsCount;
 		int leastShootsCount;
 		int currentScore;
@@ -147,17 +150,32 @@ namespace SystemObjects
 
 		public void ConnectWithGlobalObjectFunc()
 		{
+			if (levelInfoHints != null)
+			{
+				levelInfoHints.gameObject.SetActive(true);
+			}
+
 			headerPanelScript = FindObjectOfType<HeaderPanelScript>();
 			headerPanelScript.SetInitScore(leastShootsCount, currentScore);
 
 			ExplodeTargetMeta [] tmpDestrObj = FindObjectsOfType<ExplodeTargetMeta>();
 			destrObjectsOnScene = FindObjectsOfType<ExplodeTargetMeta>().Length;
-			Debug.Log("Destructible objects: " + destrObjectsOnScene);
+			//Debug.Log("Destructible objects: " + destrObjectsOnScene);
 			for (int i = 0; i < destrObjectsOnScene; ++i)
 			{
 				tmpDestrObj[i].levelManager = this;
 			}
 			endLevelEffects = FindObjectOfType<EndLevelEffects>();
+
+			if (levelInfoHints == null)
+			{
+				playerTap.CanProceed = true;
+			}
+		}
+
+		public void StartLevelStage()
+		{
+			playerTap.CanProceed = true;
 		}
 
 		public void PlayEffect(GameManager.EffectSounds effect)
