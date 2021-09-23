@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using SystemObjects;
+using AllMenusUI;
 
 namespace Effects
 {
@@ -18,7 +19,11 @@ namespace Effects
 
 		[SerializeField]
 		ParticleSystem winStarFall;
+		[SerializeField]
+
 		LevelManager levelManager;
+		[SerializeField]
+		GameObject endLevelInfo;
 
 		public void PlayWinFinal(LevelManager LM)
 		{
@@ -42,11 +47,13 @@ namespace Effects
 			failText.gameObject.SetActive(false);
 			winStarFall.Stop();
 			winStarFall.gameObject.SetActive(false);
+			endLevelInfo.SetActive(false);
 		}
 
 		void StepNewLevel()
 		{
-			levelManager.StepNewLevel();
+			endLevelInfo.SetActive(true);
+			//levelManager.StepNewLevel();
 		}
     }
 }

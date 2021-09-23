@@ -26,14 +26,25 @@ namespace SystemObjects
 		int maxShootsCount;
 		int leastShootsCount;
 		int currentScore;
+		int currentLevelScore;
 
 		int destrObjectsOnScene;
 
 		bool isVictory;
 		bool canCheckVictory;
 
+		public int GetLevelScore
+		{
+			get {return currentLevelScore;}
+		}
+		public int GetFullScore
+		{
+			get {return currentScore;}
+		}
+
 		HeaderPanelScript headerPanelScript;
 		EndLevelEffects endLevelEffects;
+		LevelBonusController levelBonusController;
 
 		PlayerMoveControl player;
 		PlayerTapControl playerTap;
@@ -44,6 +55,7 @@ namespace SystemObjects
 			maxShootsCount = GameManager.inst.everyLevelMaxShoots[level-1];
 			leastShootsCount = maxShootsCount;
 			currentScore = GameManager.inst.PreviousScore;
+			currentLevelScore = 0;
 
 			GameManager.inst.AvailableLevel = Mathf.Max(level, GameManager.inst.AvailableLevel);
 
@@ -103,6 +115,7 @@ namespace SystemObjects
 		{
 			headerPanelScript.SetNewScore(currentScore, currentScore + addScore);
 			currentScore += addScore;
+			currentLevelScore += addScore;
 			GameManager.inst.PreviousScore = currentScore;
 			Debug.Log("Add new destructed objects: " + numOfDestructed);
 			destrObjectsOnScene += numOfDestructed;
@@ -126,6 +139,7 @@ namespace SystemObjects
 		IEnumerator FinishLevelCoroutine()
 		{
 			playerTap.CanProceed = false;
+			levelBonusController.MakePrizeDecision(currentLevelScore, currentScore);
 			if (isVictory)
 			{
 				myAudioMusic.Stop();
@@ -165,7 +179,9 @@ namespace SystemObjects
 			{
 				tmpDestrObj[i].levelManager = this;
 			}
-			endLevelEffects = FindObjectOfType<EndLevelEffects>();
+			//endLevelEffects = FindObjectOfType<EndLevelEffects>();
+			endLevelEffects = gameObject.GetComponent<EndLevelEffects>();
+			levelBonusController = gameObject.GetComponent<LevelBonusController>();
 
 			if (levelInfoHints == null)
 			{
