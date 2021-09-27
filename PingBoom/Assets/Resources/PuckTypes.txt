@@ -1,0 +1,19 @@
+1. Стандартная шайба: friction - 1, min velocity - 1, material 0.2/0.8
+
+2. Газовая шайба: friction - 0.1, min velocity - 6, material 0.2/0.4 проходит сквозь все препятствия
+
+3. Сокрушающая шайба: friction - 4, min velocity - 1, material 0/1 разрушает бетон с первого удара
+
+4. Бетонная шайба: friction - 0.7, min velocity - 1, material 0.5/0.5 разрушает бетон в два раза быстрее, держит не более 10 столкновений
+
+5. Смоляная шайба: friction - 3, min velocity - 1, material 1/0 прилипает после первого столкновения с препятствием
+
+6. Апельсиновая шайба: friction - 1, min velocity - 1, material 0.4/1 издает смешные звуки
+
+7. Сырная шайба: friction - 0.5, min velocity - 1, material 0/0.4
+
+8. Радиоактивная шайба friction - 1, min velocity - 1, material 0.2/0.8 светится в темноте
+
+9. Ледяная шайба: friction - 0.4, min velocity - 1, material 0/1, держит не более 5 столкновений
+
+10. Резиновая шайба: friction - 0.2, min velocity - 1, material 0/1 ты еще не раз пожалеешь, что выбрал ее

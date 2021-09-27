@@ -24,6 +24,9 @@ namespace AllMenusUI
 
 		public void OnEnable()
 		{
+			currClicked = null;
+			prevClicked = null;
+
 			// Clear contentArea
 			foreach(Transform child in contentArea.transform)
 			{
@@ -39,24 +42,31 @@ namespace AllMenusUI
 				{
 					ChoosePuckElementScript chpe = Instantiate(chpePrefab, contentArea.transform) as ChoosePuckElementScript;
 					chpe.SetParams(cnt, cnt2);
-					//chpe.meWasClicked += OnPuckElementClicked(ChoosePuckElementScript puck);
+					chpe.meWasClicked += OnPuckElementClicked;
+					if (cnt2 == 0)
+					{
+						chpe.OnMeClick();
+					}
 					cnt2++;
 				}
 				cnt++;
 			}
-
-
-
 		}
 
 		void OnPuckElementClicked(ChoosePuckElementScript puck)
 		{
-
+			currClicked = puck;
+			if (prevClicked != null)
+			{
+				prevClicked.OnMeDeclick();
+			}
+			prevClicked = currClicked;
 		}
 
         // Update is called once per frame
         public void OnCloseMenu()
 		{
+			puckChoose = currClicked.myRealNum;
 			this.gameObject.SetActive(false);
 		}
     }
