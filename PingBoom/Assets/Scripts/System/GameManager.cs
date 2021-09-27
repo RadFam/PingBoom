@@ -29,6 +29,10 @@ namespace SystemObjects
 
 		#region Game parameters
 		public List<int> everyLevelMaxShoots;
+		public int everyLevelMaxGloves;
+		public int extraGloves;
+		public int everyLevelChangePucks;
+		public List<bool> pucksUnblocked;
 		#endregion
 
 		public float MusicVol

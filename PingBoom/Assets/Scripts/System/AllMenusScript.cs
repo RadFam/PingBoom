@@ -14,6 +14,8 @@ namespace AllMenusUI
 		[SerializeField]
 		HeaderPanelScript HPS;
 		[SerializeField]
+		BottomPanelScript BPS;
+		[SerializeField]
 		LevelMenuScript LMS;
 		[SerializeField]
 		MainMenuScript MMS;
@@ -102,6 +104,7 @@ namespace AllMenusUI
 			levelSceneOpen = false;
 			startSceneOpen = true;
 			HPS.gameObject.SetActive(false);
+			BPS.gameObject.SetActive(false);
 			SMS.gameObject.SetActive(false);
 			PMS.gameObject.SetActive(false);
 		}
@@ -110,6 +113,7 @@ namespace AllMenusUI
 			levelSceneOpen = true;
 			startSceneOpen = false;
 			HPS.gameObject.SetActive(true);
+			BPS.gameObject.SetActive(true);
 		}
 
 		public void OpenCloseLevels(bool val)

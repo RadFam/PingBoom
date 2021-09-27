@@ -27,6 +27,8 @@ namespace SystemObjects
 		int leastShootsCount;
 		int currentScore;
 		int currentLevelScore;
+		int gloveCount;
+		int puckChangesCount;
 
 		int destrObjectsOnScene;
 
@@ -43,6 +45,7 @@ namespace SystemObjects
 		}
 
 		HeaderPanelScript headerPanelScript;
+		BottomPanelScript bottomPanelScript;
 		EndLevelEffects endLevelEffects;
 		LevelBonusController levelBonusController;
 
@@ -56,6 +59,8 @@ namespace SystemObjects
 			leastShootsCount = maxShootsCount;
 			currentScore = GameManager.inst.PreviousScore;
 			currentLevelScore = 0;
+			puckChangesCount = GameManager.inst.everyLevelChangePucks;
+			gloveCount = GameManager.inst.everyLevelMaxGloves + GameManager.inst.extraGloves;
 
 			GameManager.inst.AvailableLevel = Mathf.Max(level, GameManager.inst.AvailableLevel);
 
@@ -117,7 +122,7 @@ namespace SystemObjects
 			currentScore += addScore;
 			currentLevelScore += addScore;
 			GameManager.inst.PreviousScore = currentScore;
-			Debug.Log("Add new destructed objects: " + numOfDestructed);
+			//Debug.Log("Add new destructed objects: " + numOfDestructed);
 			destrObjectsOnScene += numOfDestructed;
 			CheckLevelFinished(true);
 		}
@@ -171,6 +176,8 @@ namespace SystemObjects
 
 			headerPanelScript = FindObjectOfType<HeaderPanelScript>();
 			headerPanelScript.SetInitScore(leastShootsCount, currentScore);
+			bottomPanelScript = FindObjectOfType<BottomPanelScript>();
+			bottomPanelScript.SetParameters(puckChangesCount, gloveCount);
 
 			ExplodeTargetMeta [] tmpDestrObj = FindObjectsOfType<ExplodeTargetMeta>();
 			destrObjectsOnScene = FindObjectsOfType<ExplodeTargetMeta>().Length;
