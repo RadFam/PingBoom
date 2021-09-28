@@ -50,8 +50,7 @@ namespace GameObjects
 				{
 					if (myRigid.velocity.magnitude <= minVelocity)
 					{
-						myRigid.velocity = new Vector2(0.0f, 0.0f);
-						isSliding = false;
+						EmergencyStop();
 						levelManager.CheckLevelFinished(false);
 					}
 					timerCnt = 0.0f;
@@ -76,11 +75,16 @@ namespace GameObjects
 			}
 		}
 
+		public void EmergencyStop()
+		{
+			isSliding = false;
+			myRigid.velocity = new Vector2(0.0f, 0.0f);
+		}
+
 		public void DeathStop()
 		{
 			myCollider.enabled = false;
-			isSliding = false;
-			myRigid.velocity = new Vector2(0.0f, 0.0f);
+			EmergencyStop();
 		}
     }
 }

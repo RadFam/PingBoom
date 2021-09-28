@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,12 +13,21 @@ namespace AllMenusUI
 		Text puckChangesCount;
 		[SerializeField]
 		Text gloveChangesCount;
+		[SerializeField]
+		Image gloveImage;
+		[SerializeField]
+		List<Sprite> gloveSprites;
+
+		public Action GlovePressedTrue;
+		public Action GlovePressedFalse;
 
 		int puckChanges;
 		int gloveChanges;
+
+		bool glovePressed;
         void Start()
         {
-
+			glovePressed = false;
         }
 
 		public void SetParameters(int pucks, int gloves)
@@ -37,6 +47,8 @@ namespace AllMenusUI
 		}
         public void OnGloveClick()
 		{
+			ChangeGloveStatus();
+
 			if (puckChanges >= 0)
 			{
 
@@ -49,6 +61,36 @@ namespace AllMenusUI
 			{
 				
 			}
+		}
+
+		void ChangeGloveStatus()
+		{
+			glovePressed = !glovePressed;
+			
+			if (!glovePressed)
+			{
+				gloveImage.sprite = gloveSprites[0];
+			}
+			else
+			{
+				gloveImage.sprite = gloveSprites[1];
+			}
+		}
+
+		public void SetGloveStatus(bool val, int del)
+		{
+			glovePressed = val;
+			if (!glovePressed)
+			{
+				gloveImage.sprite = gloveSprites[0];
+			}
+			else
+			{
+				gloveImage.sprite = gloveSprites[1];
+			}
+
+			gloveChanges += del;
+			gloveChangesCount.text = "x" + gloveChanges.ToString();
 		}
     }
 }

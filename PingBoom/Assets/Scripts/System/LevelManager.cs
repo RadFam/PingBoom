@@ -181,12 +181,12 @@ namespace SystemObjects
 
 			ExplodeTargetMeta [] tmpDestrObj = FindObjectsOfType<ExplodeTargetMeta>();
 			destrObjectsOnScene = FindObjectsOfType<ExplodeTargetMeta>().Length;
-			//Debug.Log("Destructible objects: " + destrObjectsOnScene);
+
 			for (int i = 0; i < destrObjectsOnScene; ++i)
 			{
 				tmpDestrObj[i].levelManager = this;
 			}
-			//endLevelEffects = FindObjectOfType<EndLevelEffects>();
+			
 			endLevelEffects = gameObject.GetComponent<EndLevelEffects>();
 			levelBonusController = gameObject.GetComponent<LevelBonusController>();
 
