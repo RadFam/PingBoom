@@ -10,10 +10,32 @@
 
 6. Апельсиновая шайба: friction - 1, min velocity - 1, material 0.4/1 издает смешные звуки
 
-7. Сырная шайба: friction - 0.5, min velocity - 1, material 0/0.4
+7. Сырная шайба: friction - 0.5, min velocity - 1, material 0/0.4 издает неприличные звуки
 
 8. Радиоактивная шайба friction - 1, min velocity - 1, material 0.2/0.8 светится в темноте
 
 9. Ледяная шайба: friction - 0.4, min velocity - 1, material 0/1, держит не более 5 столкновений
 
 10. Резиновая шайба: friction - 0.2, min velocity - 1, material 0/1 ты еще не раз пожалеешь, что выбрал ее
+
+11. Растительная(цветочная) шайба: friction - 4, min velocity - 1, material 0.9/0.1 самая бесполезная шайба
+
+12. Пиратская шайба: friction - 1, min velocity - 1, material 0.2/0.8 живет быстро, умирает молодой (разрушает любые препятствия, но только один раз)
+
+13. Пиксельная шайба: friction - 0.5, min velocity - 1, material 0.4/0.6 ...in loving memory of Packman
+
+14. Предсказательная шайба: friction - 2, min velocity - 1, material 0.15/0.75 дает непрошенные советы
+
+15. Драгоценная шайба: friction - 1.5, min velocity - 0.5, material 0.3/0.7 сияет, переливается, стоит запредельно дорого
+
+16. Условная шайба: friction - 1.2, min velocity - 3.4, material 0.5/0.6 какой-то черновой набросок, а не шайба
+
+17. Лунная шайба: friction - 0.2, min velocity - 1, material 1/0 разрушает бетон с первого удара, несет возмездие во имя Луны
+
+18. Ленивая шайба: friction - 3, min velocity - 2, material 0.8/0.2 игнорирует области ускорения/торможения
+
+19. Девятнадцатая шайба: friction - 1, min velocity - 2, material 0.5/0.5 поздравляем, вы нашли девятнадцатую шайбу
+
+20. Антискоростная шайба: friction - 1, min velocity - 1, material 0.2/0.8 игнорирует ускоряющие области
+
+21. Антитормозящая шайба: friction - 1, min velocity - 1, material 0.2/0.8 игнорирует замедляющие области
