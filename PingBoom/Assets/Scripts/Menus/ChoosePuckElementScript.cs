@@ -18,6 +18,7 @@ namespace AllMenusUI
 			myRealNum = realNum;
 			// ......
 			// Get from SO sprite of pusk based on realNum argument
+			myImage.sprite = Resources.Load<PuckObjectsScript>("ScriptableObjects/PuckContainer").GetPuckByNum(realNum).PuckSprite;
 		}
 
 		public void OnMeClick()

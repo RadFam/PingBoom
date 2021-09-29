@@ -63,10 +63,12 @@ namespace AllMenusUI
 			prevClicked = currClicked;
 		}
 
-        // Update is called once per frame
         public void OnCloseMenu()
 		{
 			puckChoose = currClicked.myRealNum;
+
+			// Get to Know the players puck, what parameters will be applied to it
+
 			this.gameObject.SetActive(false);
 		}
     }

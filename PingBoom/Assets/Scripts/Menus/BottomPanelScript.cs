@@ -57,7 +57,7 @@ namespace AllMenusUI
 		{
 			if (puckChanges >= 0)
 			{
-				
+				AllMenusScript.inst.OpenClosePuckMenu(true);
 			}
 		}
 

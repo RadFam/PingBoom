@@ -72,6 +72,16 @@ public class PuckObjectsScript : ScriptableObject
 	{
 		return allPucks.Find(x => x.Name == findName);
 	}
+
+	public PuckData GetPuckByNum(int num)
+	{
+		if (num >=0 && num < allPucks.Count)
+		{
+			return allPucks[num];
+		}
+
+		return null;
+	}
 }
 
 [System.Serializable]
