@@ -1265,6 +1265,7 @@ GameObject:
   - component: {fileID: 917075673}
   - component: {fileID: 917075674}
   - component: {fileID: 917075677}
+  - component: {fileID: 917075678}
   - component: {fileID: 917075676}
   - component: {fileID: 917075675}
   m_Layer: 0
@@ -1319,6 +1320,7 @@ MonoBehaviour:
   woodEffect: {fileID: 8300000, guid: 228e27e74c600244c848a66c573d5aae, type: 3}
   concreteEffect: {fileID: 8300000, guid: 7b966d7a9a2bb7f4c865962adf80559a, type: 3}
   levelInfoHints: {fileID: 403605522}
+  fieldClickController: {fileID: 0}
 --- !u!114 &917075674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1536,6 +1538,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971061a4800afab40b87032f0d99f310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &917075678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 917075670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16413ffbac6ad6042836a1c15f5639a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 519420031}
+  playerMoveControl: {fileID: 1996826594}
+  glovePrefab: {fileID: 114702644288133728, guid: 16e9645477d974e49b5263231499f75b,
+    type: 2}
 --- !u!1 &1159354855
 GameObject:
   m_ObjectHideFlags: 0

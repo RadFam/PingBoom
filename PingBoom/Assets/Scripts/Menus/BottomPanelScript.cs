@@ -47,17 +47,15 @@ namespace AllMenusUI
 		}
         public void OnGloveClick()
 		{
-			ChangeGloveStatus();
-
-			if (puckChanges >= 0)
+			if (gloveChanges >= 0)
 			{
-
+				ChangeGloveStatus();		
 			}
 		}
 
 		public void OnChangePuckClick()
 		{
-			if (gloveChanges >= 0)
+			if (puckChanges >= 0)
 			{
 				
 			}
@@ -69,10 +67,12 @@ namespace AllMenusUI
 			
 			if (!glovePressed)
 			{
+				GlovePressedFalse();
 				gloveImage.sprite = gloveSprites[0];
 			}
 			else
 			{
+				GlovePressedTrue();
 				gloveImage.sprite = gloveSprites[1];
 			}
 		}
@@ -82,10 +82,12 @@ namespace AllMenusUI
 			glovePressed = val;
 			if (!glovePressed)
 			{
+				GlovePressedFalse();
 				gloveImage.sprite = gloveSprites[0];
 			}
 			else
 			{
+				GlovePressedTrue();
 				gloveImage.sprite = gloveSprites[1];
 			}
 

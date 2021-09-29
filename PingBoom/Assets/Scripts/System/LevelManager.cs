@@ -23,6 +23,8 @@ namespace SystemObjects
 
 		[SerializeField]
 		LevelInfoPanel levelInfoHints;
+		[SerializeField]
+		FieldClickController fieldClickController;
 		int maxShootsCount;
 		int leastShootsCount;
 		int currentScore;
@@ -178,6 +180,8 @@ namespace SystemObjects
 			headerPanelScript.SetInitScore(leastShootsCount, currentScore);
 			bottomPanelScript = FindObjectOfType<BottomPanelScript>();
 			bottomPanelScript.SetParameters(puckChangesCount, gloveCount);
+
+			fieldClickController.GlobalPreparation();
 
 			ExplodeTargetMeta [] tmpDestrObj = FindObjectsOfType<ExplodeTargetMeta>();
 			destrObjectsOnScene = FindObjectsOfType<ExplodeTargetMeta>().Length;
