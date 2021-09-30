@@ -7408,6 +7408,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbee29f51fde1349afaa99935845975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myName: 
+  myAudio: {fileID: 1996826596}
+  myRigid: {fileID: 1996826591}
+  myCollider: {fileID: 1996826590}
+  mySpriteR: {fileID: 1996826592}
   viscousFriction: 1
   minVelocity: 1
 --- !u!114 &1996826595

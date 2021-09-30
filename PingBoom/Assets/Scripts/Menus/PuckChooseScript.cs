@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SystemObjects;
+using GameObjects;
 
 namespace AllMenusUI
 {
@@ -68,6 +69,7 @@ namespace AllMenusUI
 			puckChoose = currClicked.myRealNum;
 
 			// Get to Know the players puck, what parameters will be applied to it
+			FindObjectOfType<PlayerMoveControl>().TakeImagery(puckChoose);
 
 			this.gameObject.SetActive(false);
 		}

@@ -7,10 +7,19 @@ namespace GameObjects
 {
     public class PlayerMoveControl : MonoBehaviour
     {
+		public string myName;
+
+		string myRusName;
+		string myRusDescription;
 		AudioClip strikePuckSound;
+		[SerializeField]
 		AudioSource myAudio;
+		[SerializeField]
 		Rigidbody2D myRigid;
+		[SerializeField]
 		Collider2D myCollider;
+		[SerializeField]
+		SpriteRenderer mySpriteR;
 		bool isSliding;
 		[SerializeField]
 		float viscousFriction;
@@ -20,6 +29,7 @@ namespace GameObjects
 		float timerCnt;
         // Use this for initialization
 		LevelManager levelManager;
+		PuckObjectsScript pos;
 
 		public bool IsSliding
 		{
@@ -28,16 +38,35 @@ namespace GameObjects
 		}
         void Awake()
         {
-			myRigid = gameObject.GetComponent<Rigidbody2D>();
-			myCollider = gameObject.GetComponent<Collider2D>();
+			//myRigid = gameObject.GetComponent<Rigidbody2D>();
+			//myCollider = gameObject.GetComponent<Collider2D>();
 			isSliding = false;
 			timerCnt = 0.0f;
+			pos = Resources.Load<PuckObjectsScript>("ScriptableObjects/PuckContainer");
         }
 
 		void Start()
 		{
 			levelManager = FindObjectOfType<LevelManager>();
-			myAudio = GetComponent<AudioSource>();
+			//myAudio = GetComponent<AudioSource>();
+			TakeImagery(0); // By default, we start with the 0 (base) puck
+		}
+
+		public void TakeImagery(int puckNum)
+		{
+			if (isSliding)
+			{
+				EmergencyStop();
+			}
+
+			myName = pos.GetPuckByNum(puckNum).Name;
+			myRusName = pos.GetPuckByNum(puckNum).RusName;
+			myRusDescription = pos.GetPuckByNum(puckNum).RusDescr;
+			mySpriteR.sprite = pos.GetPuckByNum(puckNum).PuckSprite;
+			strikePuckSound = pos.GetPuckByNum(puckNum).StrikeSound;
+			myCollider.sharedMaterial = pos.GetPuckByNum(puckNum).PuckMat;
+			viscousFriction = pos.GetPuckByNum(puckNum).Friction;
+			minVelocity = pos.GetPuckByNum(puckNum).StopSpeed;
 		}
 
         // Update is called once per frame
