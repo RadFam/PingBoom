@@ -63,7 +63,7 @@ namespace Controls
 				RaycastHit2D hit = Physics2D.Raycast(cam.ScreenToWorldPoint(Input.mousePosition), Vector3.forward);
 				if (hit.collider == null)
 				{
-					CatchingGloveScript cgs = Instantiate(glovePrefab, touchPlace, Quaternion.identity);
+					CatchingGloveScript cgs = Instantiate(glovePrefab, new Vector3(touchPlace.x, touchPlace.y, 1), Quaternion.identity);
 					cgs.SetPlayerCtrl(playerMoveControl);
 					bottomPanel.SetGloveStatus(false, -1);
 				}

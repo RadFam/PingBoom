@@ -9,7 +9,7 @@ namespace AllMenusUI
     public class PuckChooseScript : MonoBehaviour
     {
 		[SerializeField]
-		ChoosePuckElementScript chpePrefab;
+		GameObject chpePrefab;
 		[SerializeField]
 		GameObject contentArea;
 
@@ -41,7 +41,8 @@ namespace AllMenusUI
 			{
 				if (puck) // puck is unlocked
 				{
-					ChoosePuckElementScript chpe = Instantiate(chpePrefab, contentArea.transform) as ChoosePuckElementScript;
+					GameObject go = Instantiate(chpePrefab, contentArea.transform);
+					ChoosePuckElementScript chpe = go.GetComponent<ChoosePuckElementScript>();
 					chpe.SetParams(cnt, cnt2);
 					chpe.meWasClicked += OnPuckElementClicked;
 					if (cnt2 == 0)
@@ -69,6 +70,7 @@ namespace AllMenusUI
 			puckChoose = currClicked.myRealNum;
 
 			// Get to Know the players puck, what parameters will be applied to it
+			FindObjectOfType<LevelManager>().ChangePuckCount(-1);
 			FindObjectOfType<PlayerMoveControl>().TakeImagery(puckChoose);
 
 			this.gameObject.SetActive(false);

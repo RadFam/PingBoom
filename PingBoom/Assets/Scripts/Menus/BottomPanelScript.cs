@@ -47,7 +47,7 @@ namespace AllMenusUI
 		}
         public void OnGloveClick()
 		{
-			if (gloveChanges >= 0)
+			if (gloveChanges > 0)
 			{
 				ChangeGloveStatus();		
 			}
@@ -55,7 +55,7 @@ namespace AllMenusUI
 
 		public void OnChangePuckClick()
 		{
-			if (puckChanges >= 0)
+			if (puckChanges > 0)
 			{
 				AllMenusScript.inst.OpenClosePuckMenu(true);
 			}

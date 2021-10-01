@@ -2896,6 +2896,8 @@ MonoBehaviour:
   metalEffect: {fileID: 8300000, guid: 659cfb61b558de24cafe0848e9cbdde6, type: 3}
   woodEffect: {fileID: 8300000, guid: 228e27e74c600244c848a66c573d5aae, type: 3}
   concreteEffect: {fileID: 8300000, guid: 7b966d7a9a2bb7f4c865962adf80559a, type: 3}
+  levelInfoHints: {fileID: 0}
+  fieldClickController: {fileID: 0}
 --- !u!114 &917075674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2910,6 +2912,8 @@ MonoBehaviour:
   winText: {fileID: 233914420}
   failText: {fileID: 185719821}
   winStarFall: {fileID: 1988796391}
+  levelManager: {fileID: 0}
+  endLevelInfo: {fileID: 0}
 --- !u!82 &917075675
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3769,7 +3773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!60 &1283245504
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10607,6 +10611,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbee29f51fde1349afaa99935845975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myName: 
+  myAudio: {fileID: 0}
+  myRigid: {fileID: 0}
+  myCollider: {fileID: 0}
+  mySpriteR: {fileID: 0}
   viscousFriction: 0.4
   minVelocity: 0.1
 --- !u!114 &1996826595

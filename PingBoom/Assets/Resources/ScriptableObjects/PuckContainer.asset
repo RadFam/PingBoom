@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae06c8c1f5175a41ada65a5e0b5950b, type: 3}
+  m_Name: PuckContainer
+  m_EditorClassIdentifier: 
+  allPucks:
+  - name: Standart
+    rusName: "\u0421\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u0430\u044F \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u0422\u043E, \u0441 \u0447\u0435\u043C \u0432\u0441\u0435 \u043D\u0430\u0447\u0438\u043D\u0430\u044E\u0442"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 8ee7fba9b10b928499f3cf6493b77a30, type: 3}
+    puckMaterial: {fileID: 6200000, guid: 0b149bb250dc4a6439123da28e1cd4db, type: 2}
+    puckFriction: 1
+    puckStopSpeed: 1
+  - name: Gas
+    rusName: "\u0413\u0430\u0437\u043E\u0432\u0430\u044F \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u041F\u0440\u043E\u0445\u043E\u0434\u0438\u0442 \u0441\u043A\u0432\u043E\u0437\u044C
+      \u043B\u044E\u0431\u044B\u0435 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u044F.
+      \u0411\u044B\u0441\u0442\u0440\u043E \u0438\u0441\u0447\u0435\u0437\u0430\u0435\u0442"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 279125c70ba1cea4d83658e97076a109, type: 3}
+    puckMaterial: {fileID: 6200000, guid: 01de8c732e5d13c4fa26ac496a5bd91e, type: 2}
+    puckFriction: 0.1
+    puckStopSpeed: 6
+  - name: Crushing
+    rusName: "\u0421\u043E\u043A\u0440\u0443\u0448\u0430\u044E\u0449\u0430\u044F \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u041D\u0435\u043F\u043E\u0432\u043E\u0440\u043E\u0442\u043B\u0438\u0432\u0430\u044F,
+      \u043D\u043E \u0440\u0430\u0437\u043D\u043E\u0441\u0438\u0442 \u0431\u0435\u0442\u043E\u043D
+      \u0441 \u043E\u0434\u043D\u043E\u0433\u043E \u0443\u0434\u0430\u0440\u0430"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: f41d337ab0de6674e9be561aac211532, type: 3}
+    puckMaterial: {fileID: 6200000, guid: c2cef4bad5319b149866abced3e0202e, type: 2}
+    puckFriction: 4
+    puckStopSpeed: 1
+  - name: Concrete
+    rusName: "\u0411\u0435\u0442\u043E\u043D\u043D\u0430\u044F \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u0420\u0430\u0437\u0440\u0443\u0448\u0430\u0435\u0442 \u0431\u0435\u0442\u043E\u043D
+      \u0432 \u0434\u0432\u0430 \u0440\u0430\u0437\u0430 \u0431\u044B\u0441\u0442\u0440\u0435\u0435,
+      \u0434\u0435\u0440\u0436\u0438\u0442 \u043D\u0435 \u0431\u043E\u043B\u0435\u0435
+      10 \u0441\u0442\u043E\u043B\u043A\u043D\u043E\u0432\u0435\u043D\u0438\u0439 "
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 35cd4448465f5634c975b201acc911d0, type: 3}
+    puckMaterial: {fileID: 6200000, guid: cbfb218d99bbc8c45b3da26fb322b7c1, type: 2}
+    puckFriction: 0.7
+    puckStopSpeed: 1
+  - name: Tar
+    rusName: "\u0421\u043C\u043E\u043B\u044F\u043D\u0430\u044F \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u041F\u0440\u0438\u043B\u0438\u043F\u0430\u0435\u0442 \u043A
+      \u043F\u0435\u0440\u0432\u043E\u043C\u0443 \u0436\u0435 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u044E"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 5f6495ba38156d246b50a66ccb8f30b3, type: 3}
+    puckMaterial: {fileID: 6200000, guid: 24447851b21c2724982f2e708874e24b, type: 2}
+    puckFriction: 3
+    puckStopSpeed: 1
+  - name: Orange
+    rusName: "\u0410\u043F\u0435\u043B\u044C\u0441\u0438\u043D\u043E\u0432\u0430\u044F
+      \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u0418\u0437\u0434\u0430\u0435\u0442 \u0441\u043C\u0435\u0448\u043D\u044B\u0435
+      \u0437\u0432\u0443\u043A\u0438"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: ba43ae40f930c3b4f9ccd8854a97ea90, type: 3}
+    puckMaterial: {fileID: 6200000, guid: c8c058b37d8f9404a85a8cdda159d4fc, type: 2}
+    puckFriction: 1
+    puckStopSpeed: 1
+  currData:
+    name: Orange
+    rusName: "\u0410\u043F\u0435\u043B\u044C\u0441\u0438\u043D\u043E\u0432\u0430\u044F
+      \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u0418\u0437\u0434\u0430\u0435\u0442 \u0441\u043C\u0435\u0448\u043D\u044B\u0435
+      \u0437\u0432\u0443\u043A\u0438"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: ba43ae40f930c3b4f9ccd8854a97ea90, type: 3}
+    puckMaterial: {fileID: 6200000, guid: c8c058b37d8f9404a85a8cdda159d4fc, type: 2}
+    puckFriction: 1
+    puckStopSpeed: 1

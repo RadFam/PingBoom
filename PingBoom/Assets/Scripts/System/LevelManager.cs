@@ -200,6 +200,17 @@ namespace SystemObjects
 			}
 		}
 
+		public void ChangeGloveCount(int change)
+		{
+
+		}
+
+		public void ChangePuckCount(int change)
+		{
+			puckChangesCount += change;
+			bottomPanelScript.SetPucks(puckChangesCount);
+		}
+
 		public void StartLevelStage()
 		{
 			playerTap.CanProceed = true;

@@ -63,7 +63,7 @@ public class PuckObjectsScript : ScriptableObject
 		}
 		else
 		{
-			currIndex = allPucks.Count;
+			currIndex = allPucks.Count-1;
 		}
 		currData = allPucks[currIndex];
 	}

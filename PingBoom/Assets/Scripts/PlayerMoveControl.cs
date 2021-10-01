@@ -25,6 +25,7 @@ namespace GameObjects
 		float viscousFriction;
 		[SerializeField]
 		float minVelocity;
+		float realFriction;
 		float timerCheck = 0.1f;
 		float timerCnt;
         // Use this for initialization
@@ -67,6 +68,27 @@ namespace GameObjects
 			myCollider.sharedMaterial = pos.GetPuckByNum(puckNum).PuckMat;
 			viscousFriction = pos.GetPuckByNum(puckNum).Friction;
 			minVelocity = pos.GetPuckByNum(puckNum).StopSpeed;
+
+			realFriction = viscousFriction;
+		}
+
+		public void SetSlowing()
+		{
+			viscousFriction *= 4.0f;
+		}
+		public void EndSlowing()
+		{
+			viscousFriction = realFriction;
+		}
+
+		public void SetBoosting()
+		{
+			viscousFriction /= 4.0f;
+		}
+
+		public void EndBoosting()
+		{
+			viscousFriction = realFriction;
 		}
 
         // Update is called once per frame
@@ -106,6 +128,7 @@ namespace GameObjects
 
 		public void EmergencyStop()
 		{
+			Debug.Log("Emergency stop invoked");
 			isSliding = false;
 			myRigid.velocity = new Vector2(0.0f, 0.0f);
 		}
