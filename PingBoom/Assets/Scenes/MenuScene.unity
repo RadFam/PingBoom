@@ -2700,7 +2700,7 @@ MonoBehaviour:
   everyLevelMaxGloves: 3
   extraGloves: 0
   everyLevelChangePucks: 2
-  pucksUnblocked: 010101010101
+  pucksUnblocked: 010000000000
 --- !u!114 &1998259566
 MonoBehaviour:
   m_ObjectHideFlags: 0

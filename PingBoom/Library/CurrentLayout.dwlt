@@ -42,10 +42,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 1068
-  m_MinSize: {x: 681, y: 492}
+  m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 39
+  controlID: 50
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -206,10 +206,10 @@ MonoBehaviour:
     y: 0
     width: 1531
     height: 1068
-  m_MinSize: {x: 406, y: 492}
+  m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 40
+  controlID: 51
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -230,10 +230,10 @@ MonoBehaviour:
     y: 0
     width: 1531
     height: 756
-  m_MinSize: {x: 406, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 41
+  controlID: 102
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -297,20 +297,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Prefabs/PlayGameObjects
+    - Assets/Resources/Sprites/GameObjects/PuckSprites
   m_ViewMode: 1
   m_StartGridSize: 61
   m_LastFolders:
-  - Assets/Resources/Prefabs/PlayGameObjects
+  - Assets/Resources/Sprites/GameObjects/PuckSprites
   m_LastFoldersGridSize: 61
   m_LastProjectPath: C:\dist\PersonalProjects\PingBoom\PingBoom
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 120}
-    m_SelectedIDs: b82e0000
-    m_LastClickedID: 11960
-    m_ExpandedIDs: 000000003c2a0000162b0000b42b0000562d0000882e0000ee2e00001e2f0000882f000000ca9a3b
+    scrollPos: {x: 0, y: 170}
+    m_SelectedIDs: 5e2b0000
+    m_LastClickedID: 11102
+    m_ExpandedIDs: 000000003c2a0000182b0000b62b0000582d00008c2e0000f22e0000222f00008c2f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -338,7 +338,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000003c2a0000162b0000b42b0000562d0000882e0000ee2e00001e2f0000882f0000
+    m_ExpandedIDs: 000000003c2a0000182b0000b62b0000582d00008c2e0000f22e0000222f00008c2f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -454,9 +454,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4c80feff
-    m_LastClickedID: -98228
-    m_ExpandedIDs: 3481feffb286feff548efeff36aafeffc4b6feff58d5feff2ee7feff36f6feff660bffff743cffff763cffffd04cffff285effff7688ffff26e6ffffe2fbffffe4fbfffff4ffffff000000002630000030300000423000006e3000008c300000646200006a6200009a620000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 2c84feffeec1feff1aeffeffeaf4feff1804ffff500fffff681cffff20aaffff52bcffffdec7ffff5ce0ffff38eeffffe4fbfffff4ffffff00000000505b0000605b0000ac5b0000ee5b000082760000f67700002887000074870000b6870000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -505,14 +505,14 @@ MonoBehaviour:
     height: 735
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 2984.3138946081085
+  lastFramingTime: 1667.1170546649512
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.15113291, y: -1.3993205, z: -20.01709}
+    m_Target: {x: 347.8131, y: 602.64307, z: -1.5971781}
     speed: 2
-    m_Value: {x: -0.15113291, y: -1.3993205, z: -20.01709}
+    m_Value: {x: 347.8131, y: 602.64307, z: -1.5971781}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -544,9 +544,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 3.6999195
+    m_Target: 1171.0984
     speed: 2
-    m_Value: 3.6999195
+    m_Value: 1171.0984
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -629,7 +629,7 @@ MonoBehaviour:
       width: 2046.5737
       height: 1280
     m_MinimalGUI: 1
-  m_defaultScale: 1
+  m_defaultScale: 0.5609375
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
   m_LastWindowPixelSize: {x: 1148, y: 735}

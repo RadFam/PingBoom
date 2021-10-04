@@ -24,7 +24,6 @@ namespace GameObjects
 
 			hasPlayerTouched = false;
         	hasPlayerContain = false;
-			Debug.Log("Awake made");
 		}
         void Start()
         {
@@ -48,38 +47,33 @@ namespace GameObjects
 
 		IEnumerator Disappear()
 		{
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(0.2f);
 			Destroy(gameObject);
 		}
 
 		public void SetPlayerCtrl(PlayerMoveControl pmc)
 		{
-			Debug.Log("SetPlayerCtrl invoked");
 			playerMoveControl = pmc;
 			canCatch = true;
 		}
 
 		void OnTriggerEnter2D(Collider2D col)
 		{
-			Debug.Log("hasPlayerTouched: " + hasPlayerTouched + "  isGrown: " + isGrown + "  canCatch: " + canCatch);
 			if (!hasPlayerTouched && isGrown && canCatch)
 			{
 				if (col.CompareTag("Player"))
 				{
 					hasPlayerTouched = true;
-					Debug.Log("Glove was touched");
 				}
 			}
 		}
 
 		void OnTriggerStay2D(Collider2D col)
 		{
-			Debug.Log("STAY hasPlayerTouched: " + hasPlayerTouched + "  isGrown: " + isGrown + "  canCatch: " + canCatch);
 			if (hasPlayerTouched && isGrown && canCatch)
 			{
 				if (col.CompareTag("Player") && myCollider.bounds.Contains(col.transform.position))
 				{
-					Debug.Log("Glove mast work. Must work...");
 					hasPlayerTouched = false;
 					canCatch = false;
 					playerMoveControl.EmergencyStop();
@@ -95,7 +89,6 @@ namespace GameObjects
 				if (col.CompareTag("Player"))
 				{
 					hasPlayerTouched = false;
-					Debug.Log("Glove was detouched");
 				}
 			}
 		}

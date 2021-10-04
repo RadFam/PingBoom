@@ -25,6 +25,7 @@ namespace SystemObjects
 		LevelInfoPanel levelInfoHints;
 		[SerializeField]
 		FieldClickController fieldClickController;
+		int level;
 		int maxShootsCount;
 		int leastShootsCount;
 		int currentScore;
@@ -56,7 +57,7 @@ namespace SystemObjects
         // Use this for initialization
         void Start()
         {
-			int level = SceneLoaderScript.inst.CurrentScene;
+			level = SceneLoaderScript.inst.CurrentScene;
 			maxShootsCount = GameManager.inst.everyLevelMaxShoots[level-1];
 			leastShootsCount = maxShootsCount;
 			currentScore = GameManager.inst.PreviousScore;
@@ -146,7 +147,7 @@ namespace SystemObjects
 		IEnumerator FinishLevelCoroutine()
 		{
 			playerTap.CanProceed = false;
-			levelBonusController.MakePrizeDecision(currentLevelScore, currentScore);
+			levelBonusController.MakePrizeDecision(level, currentLevelScore, currentScore, 1.0f*leastShootsCount/maxShootsCount);
 			if (isVictory)
 			{
 				myAudioMusic.Stop();
@@ -202,7 +203,7 @@ namespace SystemObjects
 
 		public void ChangeGloveCount(int change)
 		{
-
+			gloveCount += change;
 		}
 
 		public void ChangePuckCount(int change)

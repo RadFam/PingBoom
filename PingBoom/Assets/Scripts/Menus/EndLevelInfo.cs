@@ -23,34 +23,55 @@ namespace AllMenusUI
         // Use this for initialization
 		public void OnEnable()
 		{
-			SetFinalResults();
+			SetFinalResults(0);
 		}
-		public void SetFinalResults()
+		public void SetFinalResults(int cnt)
 		{
-			LM = FindObjectOfType<LevelManager>();
-			commonFinalText.text = "Вы заработали " + LM.GetLevelScore.ToString() + " очков";
+			string puckTxt = "";
+			Sprite puckImg = null;
+			bool openPrize = false;
 
-			LBC = FindObjectOfType<LevelBonusController>();
-			string puckTxt;
-			Sprite puckImg;
-			bool openPrize = LBC.GetPuckPrize(out puckTxt, out puckImg);
+			if (cnt == 1)
+			{
+				openPrize = LBC.GetPuckPrize(out puckTxt, out puckImg);
+				if (!openPrize)
+				{
+					LM.StepNewLevel(); // Maybe LM must check another prize pucks
+					gameObject.SetActive(false);
+				}
+				else
+				{
+					commonFinalText.text = "";
+					prizeObjectsPanel.SetActive(true);
+				}
+			}
 
+			if (cnt == 0)
+			{
+				LM = FindObjectOfType<LevelManager>();
+				commonFinalText.text = "Вы заработали " + LM.GetLevelScore.ToString() + " очков";
+
+				LBC = FindObjectOfType<LevelBonusController>();
+				openPrize = LBC.GetPuckPrize(out puckTxt, out puckImg);
+				Debug.Log("Try to get prize decision: " + openPrize);
+			}
 
 			if (openPrize)
 			{
 				prizeObjectsPanel.SetActive(true);
-				puckDescription.text = "Открыта:/n" + puckTxt;
+				puckDescription.text = "Открыта:\n" + puckTxt;
 				puckImage.sprite = puckImg;
 			}
 			else
 			{
 				prizeObjectsPanel.SetActive(false);
-			}
+			}			
 		}
         public void OnOkButtonPressed()
 		{
-			LM.StepNewLevel();
-			gameObject.SetActive(false);
+			SetFinalResults(1);
+			//LM.StepNewLevel(); // Maybe LM must check another prize pucks
+			//gameObject.SetActive(false);
 		}	
     }
 }

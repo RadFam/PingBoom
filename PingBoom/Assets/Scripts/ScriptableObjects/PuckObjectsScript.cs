@@ -68,6 +68,11 @@ public class PuckObjectsScript : ScriptableObject
 		currData = allPucks[currIndex];
 	}
 
+	public int GetPuckNumByName(string findName)
+	{
+		return allPucks.FindIndex(x => x.Name == findName);
+	}
+
 	public PuckData GetPuckByName(string findName)
 	{
 		return allPucks.Find(x => x.Name == findName);
