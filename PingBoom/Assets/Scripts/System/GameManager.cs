@@ -25,6 +25,7 @@ namespace SystemObjects
 		string settingsFilenamePath;
 
 		Dictionary<string, object> savebleData;
+		List<int> everyLevelScores;
 		#endregion
 
 		#region Game parameters
@@ -64,6 +65,19 @@ namespace SystemObjects
 			set {saveScoreProgress = value;}
 		}
 
+		public int CurrentLevelScore
+		{
+			get {
+				int ans = 0;
+				for (int i = 0; i < SceneLoaderScript.inst.CurrentScene - 1; ++i)
+				{
+					ans += everyLevelScores[i];
+				}
+				return ans;
+			}
+			set {everyLevelScores[SceneLoaderScript.inst.CurrentScene - 1] = value;}
+		}
+
         void Awake()
         {
 			if (inst == null)
@@ -74,7 +88,7 @@ namespace SystemObjects
 			{
 				Destroy(this.gameObject);
 			}
-
+			everyLevelScores = new List<int>();
 			settingsFilename = "TechSav.ith";
 
 			savebleData = new Dictionary<string, object>();
@@ -114,6 +128,10 @@ namespace SystemObjects
 				{
 					previousScore = 0;
 				}
+				pucksUnblocked.Clear();
+				pucksUnblocked = (List<bool>)savebleData["OpenedPucks"];
+				everyLevelScores.Clear();
+				everyLevelScores = (List<int>)savebleData["EarnedScore"];
             }
 			else
 			{
@@ -122,6 +140,10 @@ namespace SystemObjects
 				availableLevel = 1;
 				previousScore = 0;
 				saveScoreProgress = true;
+				for (int i = 0; i < 28; ++i)
+				{
+					everyLevelScores.Add(0);
+				}
 			}
 
 		}
@@ -141,6 +163,8 @@ namespace SystemObjects
 			}
 			savebleData["LevelVol"] = (object)availableLevel;
 			savebleData["ProcessVol"] = (object)saveScoreProgress;
+			savebleData["OpenedPucks"] = (object)pucksUnblocked;
+			savebleData["EarnedScore"] = (object)everyLevelScores;
 
 			settingsFilenamePath = Path.Combine(Application.persistentDataPath, settingsFilename);
             //Debug.Log("Save in " + pathFull);

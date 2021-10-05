@@ -60,7 +60,7 @@ namespace SystemObjects
 			level = SceneLoaderScript.inst.CurrentScene;
 			maxShootsCount = GameManager.inst.everyLevelMaxShoots[level-1];
 			leastShootsCount = maxShootsCount;
-			currentScore = GameManager.inst.PreviousScore;
+			currentScore = GameManager.inst.CurrentLevelScore; //PreviousScore;
 			currentLevelScore = 0;
 			puckChangesCount = GameManager.inst.everyLevelChangePucks;
 			gloveCount = GameManager.inst.everyLevelMaxGloves + GameManager.inst.extraGloves;
@@ -124,7 +124,7 @@ namespace SystemObjects
 			headerPanelScript.SetNewScore(currentScore, currentScore + addScore);
 			currentScore += addScore;
 			currentLevelScore += addScore;
-			GameManager.inst.PreviousScore = currentScore;
+			// GameManager.inst.PreviousScore = currentScore;
 			//Debug.Log("Add new destructed objects: " + numOfDestructed);
 			destrObjectsOnScene += numOfDestructed;
 			CheckLevelFinished(true);
@@ -150,6 +150,7 @@ namespace SystemObjects
 			levelBonusController.MakePrizeDecision(level, currentLevelScore, currentScore, 1.0f*leastShootsCount/maxShootsCount);
 			if (isVictory)
 			{
+				GameManager.inst.CurrentLevelScore = currentLevelScore;
 				myAudioMusic.Stop();
 				//Debug.Log("Try to stop effect begin");
 				myAudioEffects.Stop();

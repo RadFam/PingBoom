@@ -28,6 +28,9 @@ namespace GameObjects
 		float realFriction;
 		float timerCheck = 0.1f;
 		float timerCnt;
+
+		int innerLifes;
+		bool canCollide;
         // Use this for initialization
 		LevelManager levelManager;
 		PuckObjectsScript pos;
@@ -42,6 +45,7 @@ namespace GameObjects
 			//myRigid = gameObject.GetComponent<Rigidbody2D>();
 			//myCollider = gameObject.GetComponent<Collider2D>();
 			isSliding = false;
+			canCollide = true;
 			timerCnt = 0.0f;
 			pos = Resources.Load<PuckObjectsScript>("ScriptableObjects/PuckContainer");
         }
@@ -70,6 +74,8 @@ namespace GameObjects
 			minVelocity = pos.GetPuckByNum(puckNum).StopSpeed;
 
 			realFriction = viscousFriction;
+			innerLifes = 10;
+			canCollide = true;
 		}
 
 		public void SetSlowing()
@@ -106,10 +112,6 @@ namespace GameObjects
 					}
 					timerCnt = 0.0f;
 				}
-
-				// Add viscous friction
-				//myRigid.AddForce(new Vector2(myRigid.velocity.x * (-1.0f) * viscousFriction, myRigid.velocity.y * (-1.0f) * viscousFriction));
-				//Debug.Log("My velocity: " + myRigid.velocity);
 			}
 			myRigid.AddForce(new Vector2(myRigid.velocity.x * (-1.0f) * viscousFriction, myRigid.velocity.y * (-1.0f) * viscousFriction));
         }
@@ -137,6 +139,36 @@ namespace GameObjects
 		{
 			myCollider.enabled = false;
 			EmergencyStop();
+		}
+
+		void OnCollisionEnter2D(Collision2D col)
+		{
+			if (canCollide)
+			{
+				innerLifes -= 1;
+			}
+			if (innerLifes <= 0 && myName == "Concrete")
+			{
+				canCollide = false;
+				EmergencyStop();
+				TakeImagery(0);
+			}
+			if (innerLifes <= 5 && myName == "Ice")
+			{
+				canCollide = false;
+				EmergencyStop();
+				TakeImagery(0);
+			}
+			if (innerLifes <= 9 && myName == "Pirate")
+			{
+				canCollide = false;
+				EmergencyStop();
+				TakeImagery(0);
+			}
+			if (myName == "Tar")
+			{
+				EmergencyStop();
+			}
 		}
     }
 }
