@@ -11,6 +11,8 @@ namespace GameObjects
 
 		string myRusName;
 		string myRusDescription;
+		[SerializeField]
+		PuckCanvas myCanvas;
 		AudioClip strikePuckSound;
 		[SerializeField]
 		AudioSource myAudio;
@@ -33,7 +35,6 @@ namespace GameObjects
 		bool canCollide;
         // Use this for initialization
 		LevelManager levelManager;
-		PuckObjectsScript pos;
 
 		public bool IsSliding
 		{
@@ -47,7 +48,7 @@ namespace GameObjects
 			isSliding = false;
 			canCollide = true;
 			timerCnt = 0.0f;
-			pos = Resources.Load<PuckObjectsScript>("ScriptableObjects/PuckContainer");
+			//pos = Resources.Load<PuckObjectsScript>("ScriptableObjects/PuckContainer");
         }
 
 		void Start()
@@ -59,23 +60,42 @@ namespace GameObjects
 
 		public void TakeImagery(int puckNum)
 		{
+			myCanvas.gameObject.SetActive(false);
 			if (isSliding)
 			{
 				EmergencyStop();
 			}
 
-			myName = pos.GetPuckByNum(puckNum).Name;
-			myRusName = pos.GetPuckByNum(puckNum).RusName;
-			myRusDescription = pos.GetPuckByNum(puckNum).RusDescr;
-			mySpriteR.sprite = pos.GetPuckByNum(puckNum).PuckSprite;
-			strikePuckSound = pos.GetPuckByNum(puckNum).StrikeSound;
-			myCollider.sharedMaterial = pos.GetPuckByNum(puckNum).PuckMat;
-			viscousFriction = pos.GetPuckByNum(puckNum).Friction;
-			minVelocity = pos.GetPuckByNum(puckNum).StopSpeed;
+			myName = GameManager.inst.allPucks.GetPuckByNum(puckNum).Name;
+			myRusName = GameManager.inst.allPucks.GetPuckByNum(puckNum).RusName;
+			myRusDescription = GameManager.inst.allPucks.GetPuckByNum(puckNum).RusDescr;
+			mySpriteR.sprite = GameManager.inst.allPucks.GetPuckByNum(puckNum).PuckSprite;
+			strikePuckSound = GameManager.inst.allPucks.GetPuckByNum(puckNum).StrikeSound;
+			myCollider.sharedMaterial = GameManager.inst.allPucks.GetPuckByNum(puckNum).PuckMat;
+			viscousFriction = GameManager.inst.allPucks.GetPuckByNum(puckNum).Friction;
+			minVelocity = GameManager.inst.allPucks.GetPuckByNum(puckNum).StopSpeed;
 
 			realFriction = viscousFriction;
 			innerLifes = 10;
 			canCollide = true;
+
+			if (myName == "Concrete")
+			{
+				myCanvas.gameObject.SetActive(true);
+				myCanvas.SetLives(10);
+			}
+			if (myName == "Ice")
+			{
+				myCanvas.gameObject.SetActive(true);
+				innerLifes = 5;
+				myCanvas.SetLives(5);
+			}
+			if (myName == "Pirate")
+			{
+				myCanvas.gameObject.SetActive(true);
+				innerLifes = 1;
+				myCanvas.SetLives(1);
+			}
 		}
 
 		public void SetSlowing()
@@ -146,25 +166,18 @@ namespace GameObjects
 			if (canCollide)
 			{
 				innerLifes -= 1;
+				if (myName == "Concrete" || myName == "Ice" || myName == "Pirate")
+				{
+					myCanvas.DecreaseLives();
+				}
 			}
-			if (innerLifes <= 0 && myName == "Concrete")
+			if (innerLifes <= 0 && (myName == "Concrete" || myName == "Ice" || myName == "Pirate"))
 			{
 				canCollide = false;
 				EmergencyStop();
 				TakeImagery(0);
 			}
-			if (innerLifes <= 5 && myName == "Ice")
-			{
-				canCollide = false;
-				EmergencyStop();
-				TakeImagery(0);
-			}
-			if (innerLifes <= 9 && myName == "Pirate")
-			{
-				canCollide = false;
-				EmergencyStop();
-				TakeImagery(0);
-			}
+			
 			if (myName == "Tar")
 			{
 				EmergencyStop();

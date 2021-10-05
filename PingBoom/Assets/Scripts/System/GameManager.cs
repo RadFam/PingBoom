@@ -10,6 +10,7 @@ namespace SystemObjects
     public class GameManager : MonoBehaviour
     {
 		public static GameManager inst;
+		public PuckObjectsScript allPucks;
 
 		public enum EffectSounds {Explosion, Victory, Fail, Concrete, Steel, Wood};
 
@@ -88,6 +89,8 @@ namespace SystemObjects
 			{
 				Destroy(this.gameObject);
 			}
+			allPucks = Resources.Load<PuckObjectsScript>("ScriptableObjects/PuckContainer");
+
 			everyLevelScores = new List<int>();
 			settingsFilename = "TechSav.ith";
 

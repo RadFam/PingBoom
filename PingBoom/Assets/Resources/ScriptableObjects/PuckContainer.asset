@@ -70,14 +70,33 @@ MonoBehaviour:
     puckMaterial: {fileID: 6200000, guid: c8c058b37d8f9404a85a8cdda159d4fc, type: 2}
     puckFriction: 1
     puckStopSpeed: 1
-  currData:
-    name: Orange
-    rusName: "\u0410\u043F\u0435\u043B\u044C\u0441\u0438\u043D\u043E\u0432\u0430\u044F
-      \u0448\u0430\u0439\u0431\u0430"
-    rusDescription: "\u0418\u0437\u0434\u0430\u0435\u0442 \u0441\u043C\u0435\u0448\u043D\u044B\u0435
+  - name: Cheese
+    rusName: "\u0421\u044B\u0440\u043D\u0430\u044F \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u0418\u0437\u0434\u0430\u0435\u0442 \u043D\u0435\u043F\u0440\u0438\u043B\u0438\u0447\u043D\u044B\u0435
       \u0437\u0432\u0443\u043A\u0438"
     strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
-    puckSprite: {fileID: 21300000, guid: ba43ae40f930c3b4f9ccd8854a97ea90, type: 3}
-    puckMaterial: {fileID: 6200000, guid: c8c058b37d8f9404a85a8cdda159d4fc, type: 2}
+    puckSprite: {fileID: 21300000, guid: 518fc4e9281037c46957801044da3de1, type: 3}
+    puckMaterial: {fileID: 6200000, guid: bb14fd60033fddd49a52b9aad944730d, type: 2}
+    puckFriction: 0.5
+    puckStopSpeed: 1
+  - name: Radioactive
+    rusName: "\u0420\u0430\u0434\u0438\u043E\u0430\u043A\u0442\u0438\u0432\u043D\u0430\u044F
+      \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u0421\u0432\u0435\u0442\u0438\u0442\u0441\u044F, \u0438 \u043D\u0435
+      \u0442\u043E\u043B\u044C\u043A\u043E \u0432 \u0442\u0435\u043C\u043D\u043E\u0442\u0435"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 1a0a0d0cb0745904d8bac47e3ab1596e, type: 3}
+    puckMaterial: {fileID: 6200000, guid: ca0d47a27328f584cb1f17f19be17857, type: 2}
+    puckFriction: 1
+    puckStopSpeed: 1
+  currData:
+    name: Radioactive
+    rusName: "\u0420\u0430\u0434\u0438\u043E\u0430\u043A\u0442\u0438\u0432\u043D\u0430\u044F
+      \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u0421\u0432\u0435\u0442\u0438\u0442\u0441\u044F, \u0438 \u043D\u0435
+      \u0442\u043E\u043B\u044C\u043A\u043E \u0432 \u0442\u0435\u043C\u043D\u043E\u0442\u0435"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 1a0a0d0cb0745904d8bac47e3ab1596e, type: 3}
+    puckMaterial: {fileID: 6200000, guid: ca0d47a27328f584cb1f17f19be17857, type: 2}
     puckFriction: 1
     puckStopSpeed: 1

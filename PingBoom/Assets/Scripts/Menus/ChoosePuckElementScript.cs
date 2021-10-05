@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using SystemObjects;
 
 namespace AllMenusUI
 {
@@ -18,7 +19,7 @@ namespace AllMenusUI
 			myRealNum = realNum;
 			// ......
 			// Get from SO sprite of pusk based on realNum argument
-			myImage.sprite = Resources.Load<PuckObjectsScript>("ScriptableObjects/PuckContainer").GetPuckByNum(realNum).PuckSprite;
+			myImage.sprite = GameManager.inst.allPucks.GetPuckByNum(realNum).PuckSprite;
 		}
 
 		public void OnMeClick()
