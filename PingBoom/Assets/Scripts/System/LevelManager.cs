@@ -76,6 +76,8 @@ namespace SystemObjects
 			// On load scene make correct sound and effects volume
 			myAudioEffects.volume = GameManager.inst.EffectsVol;
 			myAudioMusic.volume = GameManager.inst.MusicVol;
+
+			Debug.Log("Current Screen resolution: " + Screen.currentResolution);
         }
 
 		
