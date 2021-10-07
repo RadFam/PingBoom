@@ -1012,6 +1012,8 @@ MonoBehaviour:
   metalEffect: {fileID: 8300000, guid: 659cfb61b558de24cafe0848e9cbdde6, type: 3}
   woodEffect: {fileID: 8300000, guid: 228e27e74c600244c848a66c573d5aae, type: 3}
   concreteEffect: {fileID: 8300000, guid: 7b966d7a9a2bb7f4c865962adf80559a, type: 3}
+  levelInfoHints: {fileID: 0}
+  fieldClickController: {fileID: 0}
 --- !u!114 &917075674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,6 +1028,8 @@ MonoBehaviour:
   winText: {fileID: 233914420}
   failText: {fileID: 185719821}
   winStarFall: {fileID: 1988796391}
+  levelManager: {fileID: 0}
+  endLevelInfo: {fileID: 0}
 --- !u!82 &917075675
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1277,7 +1281,7 @@ Prefab:
         type: 2}
       propertyPath: shellStages.Array.data[2]
       value: 
-      objectReference: {fileID: 21300008, guid: 4cbf4ee3b2124194db1a3508841c0791,
+      objectReference: {fileID: 21300004, guid: 4cbf4ee3b2124194db1a3508841c0791,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08e7f041f0da52b45ac92336f929a4f5, type: 2}
@@ -6569,6 +6573,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbee29f51fde1349afaa99935845975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myName: 
+  myCanvas: {fileID: 0}
+  myAudio: {fileID: 0}
+  myRigid: {fileID: 0}
+  myCollider: {fileID: 0}
+  mySpriteR: {fileID: 0}
   viscousFriction: 1
   minVelocity: 1
 --- !u!114 &1996826595
