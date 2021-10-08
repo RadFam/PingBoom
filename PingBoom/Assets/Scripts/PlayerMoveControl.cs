@@ -182,6 +182,28 @@ namespace GameObjects
 			{
 				EmergencyStop();
 			}
+
+			// Check material of Obstacle
+			if (col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Steel"))
+			{
+				myRigid.velocity *= 1.0f;
+			}
+			if (col.gameObject.CompareTag("Wood"))
+			{
+				myRigid.velocity *= 0.5f;
+			}
+			if (col.gameObject.CompareTag("Stone"))
+			{
+				myRigid.velocity *= 0.7f;
+			}
+			if (col.gameObject.CompareTag("Rubber"))
+			{
+				myRigid.velocity *= 1.5f;
+			}
+			if (col.gameObject.CompareTag("Sand"))
+			{
+				myRigid.velocity *= 0.2f;
+			}
 		}
     }
 }

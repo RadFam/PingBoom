@@ -42,8 +42,8 @@ namespace Controls
 			bottomPanel.GlovePressedFalse += CanNotPlaceGlove;
 
 			// Set count of gloves
-			int allGloves = GameManager.inst.everyLevelMaxGloves + GameManager.inst.extraGloves;
-			bottomPanel.SetParameters(GameManager.inst.everyLevelChangePucks, allGloves);
+			int allGloves = GameManager.inst.CurrentLevelGloves + GameManager.inst.extraGloves;
+			bottomPanel.SetParameters(GameManager.inst.CurrentLevelPucks, allGloves);
 		}
 
 		void CanPlaceGlove()

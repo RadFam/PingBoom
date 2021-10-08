@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 64883979}
   m_Layer: 0
   m_Name: Bottom
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,7 +183,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 64883976}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f7ab59d11d382764fb50c2e065b87c8d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 176740159}
   m_Layer: 0
   m_Name: Top
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -258,7 +258,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 176740156}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f7ab59d11d382764fb50c2e065b87c8d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3133,7 +3133,7 @@ GameObject:
   - component: {fileID: 1572596068}
   m_Layer: 0
   m_Name: Right
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3159,7 +3159,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1572596065}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: b2e8c1a04058d4541afa84962ec7a45e, type: 2}
+  m_Material: {fileID: 6200000, guid: f7ab59d11d382764fb50c2e065b87c8d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -8704,7 +8704,7 @@ GameObject:
   - component: {fileID: 2060742538}
   m_Layer: 0
   m_Name: Left
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

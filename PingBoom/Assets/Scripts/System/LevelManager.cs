@@ -62,8 +62,8 @@ namespace SystemObjects
 			leastShootsCount = maxShootsCount;
 			currentScore = GameManager.inst.CurrentLevelScore; //PreviousScore;
 			currentLevelScore = 0;
-			puckChangesCount = GameManager.inst.everyLevelChangePucks;
-			gloveCount = GameManager.inst.everyLevelMaxGloves + GameManager.inst.extraGloves;
+			puckChangesCount = GameManager.inst.CurrentLevelPucks;
+			gloveCount = GameManager.inst.CurrentLevelGloves + GameManager.inst.extraGloves;
 
 			GameManager.inst.AvailableLevel = Mathf.Max(level, GameManager.inst.AvailableLevel);
 

@@ -31,9 +31,11 @@ namespace SystemObjects
 
 		#region Game parameters
 		public List<int> everyLevelMaxShoots;
-		public int everyLevelMaxGloves;
+		[SerializeField]
+		List<int> everyLevelMaxGloves;
 		public int extraGloves;
-		public int everyLevelChangePucks;
+		[SerializeField]
+		List<int> everyLevelChangePucks;
 		public List<bool> pucksUnblocked;
 		#endregion
 
@@ -78,6 +80,34 @@ namespace SystemObjects
 			}
 			set {everyLevelScores[SceneLoaderScript.inst.CurrentScene - 1] = value;}
 		}
+
+		public int CurrentLevelGloves
+		{
+			get {
+				int ans = 0;
+				for (int i = 0; i < SceneLoaderScript.inst.CurrentScene - 1; ++i)
+				{
+					ans += everyLevelMaxGloves[i];
+				}
+				return ans;
+			}
+			set {everyLevelMaxGloves[SceneLoaderScript.inst.CurrentScene - 1] = value;}
+		}
+
+		public int CurrentLevelPucks
+		{
+			get {
+				int ans = 0;
+				for (int i = 0; i < SceneLoaderScript.inst.CurrentScene - 1; ++i)
+				{
+					ans += everyLevelChangePucks[i];
+				}
+				return ans;
+			}
+			set {everyLevelChangePucks[SceneLoaderScript.inst.CurrentScene - 1] = value;}
+		}
+
+
 
         void Awake()
         {

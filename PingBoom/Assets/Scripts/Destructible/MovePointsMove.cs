@@ -9,6 +9,7 @@ namespace GameObjects
 
         // Use this for initialization
         public int childVol;
+        [SerializeField]
         List<Transform> myMovePoints;
 
 		int nextPointNum;
@@ -33,18 +34,22 @@ namespace GameObjects
             if (transform.childCount > 0)
             {
                 childVol = transform.childCount;
+                /*
                 myMovePoints = new List<Transform>();
                 for (int i = 0; i < childVol; ++i)
                 {
                     myMovePoints.Add(transform.GetChild(i).transform);
                 }
+                */
             }
 
 			nextPointNum = 0;
+            //Debug.Log("Start made: " + gameObject.name);
         }
 
 		public Transform GetNextPoint()
 		{
+            Debug.Log("GNP: " + gameObject.name);
 			Transform ans = myMovePoints[nextPointNum];
 			nextPointNum++;
 			if (nextPointNum == childVol)

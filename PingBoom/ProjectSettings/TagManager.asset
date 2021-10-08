@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Wood
+  - Steel
+  - Stone
+  - Rubber
+  - Sand
+  - Wall
   layers:
   - Default
   - TransparentFX
