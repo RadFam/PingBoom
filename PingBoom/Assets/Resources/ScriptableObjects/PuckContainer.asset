@@ -89,14 +89,139 @@ MonoBehaviour:
     puckMaterial: {fileID: 6200000, guid: ca0d47a27328f584cb1f17f19be17857, type: 2}
     puckFriction: 1
     puckStopSpeed: 1
-  currData:
-    name: Radioactive
-    rusName: "\u0420\u0430\u0434\u0438\u043E\u0430\u043A\u0442\u0438\u0432\u043D\u0430\u044F
-      \u0448\u0430\u0439\u0431\u0430"
-    rusDescription: "\u0421\u0432\u0435\u0442\u0438\u0442\u0441\u044F, \u0438 \u043D\u0435
-      \u0442\u043E\u043B\u044C\u043A\u043E \u0432 \u0442\u0435\u043C\u043D\u043E\u0442\u0435"
+  - name: Ice
+    rusName: "\u041B\u0435\u0434\u044F\u043D\u0430\u044F \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u0414\u0435\u0440\u0436\u0438\u0442 \u043D\u0435 \u0431\u043E\u043B\u0435\u0435
+      5 \u0441\u0442\u043E\u043B\u043A\u043D\u043E\u0432\u0435\u043D\u0438\u0439"
     strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
-    puckSprite: {fileID: 21300000, guid: 1a0a0d0cb0745904d8bac47e3ab1596e, type: 3}
-    puckMaterial: {fileID: 6200000, guid: ca0d47a27328f584cb1f17f19be17857, type: 2}
+    puckSprite: {fileID: 21300000, guid: 13fed8db8192123418731771f3e5e7aa, type: 3}
+    puckMaterial: {fileID: 6200000, guid: 949654b4a0a75bf4e8f997f0c85b4e8c, type: 2}
+    puckFriction: 0.4
+    puckStopSpeed: 1
+  - name: Rubber
+    rusName: "\u0420\u0435\u0437\u0438\u043D\u043E\u0432\u0430\u044F \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u0422\u044B \u0435\u0449\u0435 \u043D\u0435 \u0440\u0430\u0437
+      \u043F\u043E\u0436\u0430\u043B\u0435\u0435\u0448\u044C, \u0447\u0442\u043E \u0432\u044B\u0431\u0440\u0430\u043B
+      \u0435\u0435"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 39e3d308d52dc754a8d4603692fd2e62, type: 3}
+    puckMaterial: {fileID: 6200000, guid: 875fe79ab7315574a9cb0963d947461b, type: 2}
+    puckFriction: 0.2
+    puckStopSpeed: 1
+  - name: Flower
+    rusName: "\u0426\u0432\u0435\u0442\u043E\u0447\u043D\u0430\u044F \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u041F\u043E\u0436\u0430\u043B\u0443\u0439, \u0441\u0430\u043C\u0430\u044F
+      \u0431\u0435\u0441\u043F\u043E\u043B\u0435\u0437\u043D\u0430\u044F \u0448\u0430\u0439\u0431\u0430"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 7fd3bf539e96d30489dc93f231719257, type: 3}
+    puckMaterial: {fileID: 6200000, guid: cdcbfcdd7c7445644ac568169ec51ce9, type: 2}
+    puckFriction: 4
+    puckStopSpeed: 1
+  - name: Pirate
+    rusName: "\u041F\u0438\u0440\u0430\u0442\u0441\u043A\u0430\u044F \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u0416\u0438\u0432\u0435\u0442 \u043D\u0435\u0434\u043E\u043B\u0433\u043E,
+      \u0443\u043C\u0438\u0440\u0430\u0435\u0442 \u043C\u043E\u043B\u043E\u0434\u043E\u0439"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 290138e114e816b49aa63ed72d58ddd1, type: 3}
+    puckMaterial: {fileID: 6200000, guid: 97f963c538217804d9ca8814db968d5a, type: 2}
     puckFriction: 1
     puckStopSpeed: 1
+  - name: Pixel
+    rusName: "\u041F\u0438\u043A\u0441\u0435\u043B\u044C\u043D\u0430\u044F \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: '...in loving memory of Packman'
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 49c70dc92104fb344969ec8065d40f5e, type: 3}
+    puckMaterial: {fileID: 6200000, guid: 41bc4060c2f46b24f8064cf9c8b74d05, type: 2}
+    puckFriction: 0.5
+    puckStopSpeed: 2
+  - name: Predict
+    rusName: "\u041F\u0440\u0435\u0434\u0441\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u0430\u044F
+      \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u0414\u0430\u0435\u0442 \u043D\u0435\u043F\u0440\u043E\u0448\u0435\u043D\u043D\u044B\u0435
+      \u0441\u043E\u0432\u0435\u0442\u044B"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 6855d4f92ea320549b3b8cb2404762f1, type: 3}
+    puckMaterial: {fileID: 6200000, guid: eabbf7b48ef4bbe468a6f37a3137b85e, type: 2}
+    puckFriction: 0.5
+    puckStopSpeed: 1
+  - name: Jewel
+    rusName: "\u0414\u0440\u0430\u0433\u043E\u0446\u0435\u043D\u043D\u0430\u044F \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u0421\u0438\u044F\u0435\u0442, \u043F\u0435\u0440\u0435\u043B\u0438\u0432\u0430\u0435\u0442\u0441\u044F,
+      \u0441\u0442\u043E\u0438\u0442 \u0437\u0430\u043F\u0440\u0435\u0434\u0435\u043B\u044C\u043D\u043E
+      \u0434\u043E\u0440\u043E\u0433\u043E"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 5d76a317c8f115b47a83e64c4ff50baa, type: 3}
+    puckMaterial: {fileID: 6200000, guid: 80f0ed1720db86d409e6faa6f786751b, type: 2}
+    puckFriction: 1.5
+    puckStopSpeed: 0.5
+  - name: Abstract
+    rusName: "\u0410\u0431\u0441\u0442\u0440\u0430\u043A\u0442\u043D\u0430\u044F \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u041A\u0430\u043A\u043E\u0439-\u0442\u043E \u044D\u0441\u043A\u0438\u0437,
+      \u0430 \u043D\u0435 \u0448\u0430\u0439\u0431\u0430"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 9a616d53b38e29e4a915a45e4cd569ff, type: 3}
+    puckMaterial: {fileID: 6200000, guid: 5ee6d1432082f3848939513433879574, type: 2}
+    puckFriction: 1.2
+    puckStopSpeed: 3.4
+  - name: Moon
+    rusName: "\u041B\u0443\u043D\u043D\u0430\u044F \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u041D\u0435\u0441\u0435\u0442 \u0432\u043E\u0437\u043C\u0435\u0437\u0434\u0438\u0435.
+      \u0412\u043E \u0438\u043C\u044F \u041B\u0443\u043D\u044B, \u043A\u043E\u043D\u0435\u0447\u043D\u043E
+      \u0436\u0435"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 0a43f93622bb13146af5a9d76b5f7e05, type: 3}
+    puckMaterial: {fileID: 6200000, guid: 3c12b464bf738374987c3b8227f6e211, type: 2}
+    puckFriction: 0.2
+    puckStopSpeed: 1
+  - name: Lazy
+    rusName: "\u041B\u0435\u043D\u0438\u0432\u0430\u044F \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u0418\u0433\u043D\u043E\u0440\u0438\u0440\u0443\u0435\u0442
+      \u043E\u0431\u043B\u0430\u0441\u0442\u0438 \u0443\u0441\u043A\u043E\u0440\u0435\u043D\u0438\u044F/\u0442\u043E\u0440\u043C\u043E\u0436\u0435\u043D\u0438\u044F"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 9baa73443dc2a5c42b2659946a06f0d1, type: 3}
+    puckMaterial: {fileID: 6200000, guid: 97f68c051a0f41041aacc7c7be328455, type: 2}
+    puckFriction: 3
+    puckStopSpeed: 2
+  - name: AntiBoost
+    rusName: "\u0410\u043D\u0442\u0438\u0441\u043A\u043E\u0440\u043E\u0441\u0442\u043D\u0430\u044F
+      \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u0418\u0433\u043D\u043E\u0440\u0438\u0440\u0443\u0435\u0442
+      \u0443\u0441\u043A\u043E\u0440\u044F\u044E\u0449\u0438\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 2e5074cca38fd284381b660d9b84ced1, type: 3}
+    puckMaterial: {fileID: 6200000, guid: 1c8636ea262255f49925ead45c912987, type: 2}
+    puckFriction: 1
+    puckStopSpeed: 1
+  - name: AntiSlow
+    rusName: "\u0410\u043D\u0442\u0438\u0442\u043E\u0440\u043C\u043E\u0437\u044F\u0449\u0430\u044F
+      \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u0418\u0433\u043D\u043E\u0440\u0438\u0440\u0443\u0435\u0442
+      \u0437\u0430\u043C\u0435\u0434\u043B\u044F\u044E\u0449\u0438\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 989d4c9e4f41bb7448960c3794d4715b, type: 3}
+    puckMaterial: {fileID: 6200000, guid: ed0169a9fa4f72e449daee4a6eb43fa5, type: 2}
+    puckFriction: 1
+    puckStopSpeed: 1
+  - name: TwentyFirst
+    rusName: "\u0414\u0432\u0430\u0434\u0446\u0430\u0442\u044C \u043F\u0435\u0440\u0432\u0430\u044F
+      \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C,
+      \u0432\u044B \u043D\u0430\u0448\u043B\u0438 \u0434\u0432\u0430\u0434\u0446\u0430\u0442\u044C
+      \u043F\u0435\u0440\u0432\u0443\u044E \u0448\u0430\u0439\u0431\u0443"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 309587e1eafc62b4a8c5634bd9648e4d, type: 3}
+    puckMaterial: {fileID: 6200000, guid: 6336511225f076842bdcd9fd78c05980, type: 2}
+    puckFriction: 1
+    puckStopSpeed: 2
+  currData:
+    name: TwentyFirst
+    rusName: "\u0414\u0432\u0430\u0434\u0446\u0430\u0442\u044C \u043F\u0435\u0440\u0432\u0430\u044F
+      \u0448\u0430\u0439\u0431\u0430"
+    rusDescription: "\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C,
+      \u0432\u044B \u043D\u0430\u0448\u043B\u0438 \u0434\u0432\u0430\u0434\u0446\u0430\u0442\u044C
+      \u043F\u0435\u0440\u0432\u0443\u044E \u0448\u0430\u0439\u0431\u0443"
+    strikePuckSound: {fileID: 8300000, guid: ad88cffee7f17e54cb39a87d6fff990d, type: 3}
+    puckSprite: {fileID: 21300000, guid: 309587e1eafc62b4a8c5634bd9648e4d, type: 3}
+    puckMaterial: {fileID: 6200000, guid: 6336511225f076842bdcd9fd78c05980, type: 2}
+    puckFriction: 1
+    puckStopSpeed: 2
