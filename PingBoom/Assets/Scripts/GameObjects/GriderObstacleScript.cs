@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using SystemObjects;
 
 namespace GameObjects
@@ -21,10 +19,12 @@ namespace GameObjects
 			if (col.gameObject.CompareTag("Player"))
 			{
 				levelManager.PlayEffect(GameManager.EffectSounds.Steel);
+				/*
 				if (name == "Pirate")
 				{
 					Destroy(this.gameObject);
 				}
+				*/
 			}
 		}
     }
