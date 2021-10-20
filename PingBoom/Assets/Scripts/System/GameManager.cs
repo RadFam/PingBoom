@@ -130,6 +130,9 @@ namespace SystemObjects
 			savebleData.Add("ScoreVol", null);
 			savebleData.Add("LevelVol", null);
 			savebleData.Add("ProcessVol", null);
+			savebleData.Add("OpenedPucks", null);
+			savebleData.Add("EarnedScore", null);
+			savebleData.Add("BonusGloves", null);
 
 			// At the end
 			LoadData();
@@ -165,11 +168,12 @@ namespace SystemObjects
 				pucksUnblocked = (List<bool>)savebleData["OpenedPucks"];
 				everyLevelScores.Clear();
 				everyLevelScores = (List<int>)savebleData["EarnedScore"];
+				extraGloves = (int)savebleData["BonusGloves"];
             }
 			else
 			{
-				musicVol = 0.5f;
-				effectsVol = 0.5f;
+				musicVol = 0.25f;
+				effectsVol = 0.25f;
 				availableLevel = 1;
 				previousScore = 0;
 				saveScoreProgress = true;
@@ -177,6 +181,12 @@ namespace SystemObjects
 				{
 					everyLevelScores.Add(0);
 				}
+				pucksUnblocked.Add(true);
+				for (int i = 1; i < 28; ++i)
+				{
+					pucksUnblocked.Add(false);
+				}
+				extraGloves = 0;
 			}
 
 		}
@@ -198,6 +208,7 @@ namespace SystemObjects
 			savebleData["ProcessVol"] = (object)saveScoreProgress;
 			savebleData["OpenedPucks"] = (object)pucksUnblocked;
 			savebleData["EarnedScore"] = (object)everyLevelScores;
+			savebleData["BonusGloves"] = (object)extraGloves;
 
 			settingsFilenamePath = Path.Combine(Application.persistentDataPath, settingsFilename);
             //Debug.Log("Save in " + pathFull);

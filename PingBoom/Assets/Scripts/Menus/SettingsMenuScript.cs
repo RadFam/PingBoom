@@ -25,8 +25,8 @@ namespace AllMenusUI
 			saveProgress = false;
 			musicVolSlider.value = 1.0f;
 			effectsVolSlider.value = 1.0f;
-			musicVol = 1.0f;
-			effectsVol = 1.0f;
+			musicVol = 0.5f;
+			effectsVol = 0.5f;
 			musicVolSlider.onValueChanged.AddListener(AlterSoundVol);
 			effectsVolSlider.onValueChanged.AddListener(AlterEffectsVol);
         }
@@ -42,8 +42,8 @@ namespace AllMenusUI
 			effectsVol = GameManager.inst.EffectsVol;
 			saveProgress = GameManager.inst.SaveScoreProgress;
 
-			musicVolSlider.value = musicVol;
-			effectsVolSlider.value = effectsVol;
+			musicVolSlider.value = musicVol * 2.0f;
+			effectsVolSlider.value = effectsVol * 2.0f;
 			if (saveProgress)
 			{
 				chkBoxImage.sprite = chkBoxSprites[1];
@@ -61,7 +61,7 @@ namespace AllMenusUI
 
 		void AlterSoundVol(float value)
 		{
-			musicVol = value;
+			musicVol = value / 2.0f;
 			// Send data to GameManager
 			//.....
 			GameManager.inst.MusicVol = musicVol;
@@ -70,7 +70,7 @@ namespace AllMenusUI
 
 		void AlterEffectsVol(float value)
 		{
-			effectsVol = value;
+			effectsVol = value / 2.0f;
 			// Send data to GameManager
 			//.....
 			GameManager.inst.EffectsVol = effectsVol;

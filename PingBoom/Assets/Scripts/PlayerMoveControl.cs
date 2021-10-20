@@ -198,7 +198,7 @@ namespace GameObjects
 			}
 			if (col.gameObject.CompareTag("Rubber"))
 			{
-				myRigid.velocity *= 1.5f;
+				myRigid.velocity *= 2.0f;
 			}
 			if (col.gameObject.CompareTag("Sand"))
 			{
