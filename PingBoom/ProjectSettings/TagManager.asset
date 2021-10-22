@@ -10,6 +10,7 @@ TagManager:
   - Rubber
   - Sand
   - Wall
+  - Concrete
   layers:
   - Default
   - TransparentFX

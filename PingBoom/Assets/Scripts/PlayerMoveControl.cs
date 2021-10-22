@@ -188,13 +188,17 @@ namespace GameObjects
 			{
 				myRigid.velocity *= 1.0f;
 			}
+			if (col.gameObject.CompareTag("Concrete"))
+			{
+				myRigid.velocity *= 0.8f;
+			}
 			if (col.gameObject.CompareTag("Wood"))
 			{
 				myRigid.velocity *= 0.5f;
 			}
 			if (col.gameObject.CompareTag("Stone"))
 			{
-				myRigid.velocity *= 0.7f;
+				myRigid.velocity *= 0.65f;
 			}
 			if (col.gameObject.CompareTag("Rubber"))
 			{
