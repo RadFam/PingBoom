@@ -49,7 +49,7 @@ namespace GameObjects
 
 		public Transform GetNextPoint()
 		{
-            Debug.Log("GNP: " + gameObject.name);
+            //Debug.Log("GNP: " + gameObject.name);
 			Transform ans = myMovePoints[nextPointNum];
 			nextPointNum++;
 			if (nextPointNum == childVol)

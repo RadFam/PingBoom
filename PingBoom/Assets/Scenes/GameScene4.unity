@@ -4938,7 +4938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 0
-  linearSpeed: 3
+  linearSpeed: 2
   movePointsPool: {fileID: 32478896}
   pathNum: 1
   deltaClosePoint: 0.2
@@ -5150,7 +5150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 0
-  linearSpeed: 4
+  linearSpeed: 3
   movePointsPool: {fileID: 32478896}
   pathNum: 0
   deltaClosePoint: 0.2

@@ -85,7 +85,7 @@ namespace SystemObjects
 		{
 			get {
 				int ans = 0;
-				for (int i = 0; i < SceneLoaderScript.inst.CurrentScene - 1; ++i)
+				for (int i = 0; i <= SceneLoaderScript.inst.CurrentScene - 1; ++i)
 				{
 					ans += everyLevelMaxGloves[i];
 				}
