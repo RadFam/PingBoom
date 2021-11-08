@@ -186,7 +186,7 @@ namespace GameObjects
 			// Check material of Obstacle
 			if (col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Steel"))
 			{
-				myRigid.velocity *= 1.0f;
+				myRigid.velocity *= 0.9f;
 			}
 			if (col.gameObject.CompareTag("Concrete"))
 			{
@@ -202,7 +202,7 @@ namespace GameObjects
 			}
 			if (col.gameObject.CompareTag("Rubber"))
 			{
-				myRigid.velocity *= 2.0f;
+				myRigid.velocity *= 1.0f;
 			}
 			if (col.gameObject.CompareTag("Sand"))
 			{

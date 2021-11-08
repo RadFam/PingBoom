@@ -14,6 +14,8 @@ namespace GameObjects
 		[SerializeField]
 		float linearSpeed;
 		[SerializeField]
+		float waitTime;
+		[SerializeField]
 		MovePointsPool movePointsPool;
 
 		[SerializeField]
@@ -29,6 +31,8 @@ namespace GameObjects
 		Transform nextPosition;
 		Vector2 nextPos;
 		Vector2 moveVct;
+		float timeToStay;
+		bool moveAfterStay;
 		
 
         void Start()
@@ -47,7 +51,8 @@ namespace GameObjects
                     moveVct = nextPos - myRigid.position;
                     moveVct.Normalize();
                 }
-                Debug.Log("myRigid: " + myRigid);
+                timeToStay = 0.0f;
+				moveAfterStay = true;
             }	
 
         }
@@ -59,13 +64,30 @@ namespace GameObjects
 
 			if (linearMove)
 			{
-				myRigid.MovePosition(myRigid.position + moveVct * linearSpeed * Time.fixedDeltaTime);
-				if (Vector2.Distance(myRigid.position, nextPos) < deltaClosePoint)
+                if (moveAfterStay)
+                {
+                    myRigid.MovePosition(myRigid.position + moveVct * linearSpeed * Time.fixedDeltaTime);
+                    if (Vector2.Distance(myRigid.position, nextPos) < deltaClosePoint)
+                    {
+                        nextPosition = movePointsMove.GetNextPoint();
+                        nextPos = new Vector2(nextPosition.position.x, nextPosition.position.y);
+                        moveVct = nextPos - myRigid.position;
+                        moveVct.Normalize();
+						if (waitTime > 0.0f)
+						{
+							moveAfterStay = false;
+							timeToStay = 0.0f;
+						}
+                    }
+                }
+				else
 				{
-					nextPosition = movePointsMove.GetNextPoint();
-					nextPos = new Vector2(nextPosition.position.x, nextPosition.position.y);
-					moveVct = nextPos - myRigid.position;
-					moveVct.Normalize();
+					timeToStay += Time.deltaTime;
+					if (timeToStay >= waitTime)
+					{
+						timeToStay = 0.0f;
+						moveAfterStay = true;
+					}
 				}
 			}
         }

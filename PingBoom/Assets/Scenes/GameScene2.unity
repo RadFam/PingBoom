@@ -2175,7 +2175,7 @@ MonoBehaviour:
   playerMoveControl: {fileID: 1996826594}
   glovePrefab: {fileID: 114702644288133728, guid: 16e9645477d974e49b5263231499f75b,
     type: 2}
-  levelManager: {fileID: 0}
+  levelManager: {fileID: 917075673}
 --- !u!1 &1034890550
 GameObject:
   m_ObjectHideFlags: 0
@@ -8752,7 +8752,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 0b149bb250dc4a6439123da28e1cd4db, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &1996826592
 SpriteRenderer:
