@@ -45,7 +45,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 37
+  controlID: 86
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 38
+  controlID: 87
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 39
+  controlID: 38
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -297,20 +297,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Sprites/GameObjects
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 61
   m_LastFolders:
-  - Assets/Resources/Sprites/GameObjects
+  - Assets/Scenes
   m_LastFoldersGridSize: 61
   m_LastProjectPath: C:\dist\PersonalProjects\PingBoom\PingBoom
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 250}
-    m_SelectedIDs: 78310000
-    m_LastClickedID: 12664
-    m_ExpandedIDs: 000000008a2f00001c30000078310000c4310000e23100002632000000ca9a3b
+    m_SelectedIDs: b22f0000
+    m_LastClickedID: 12210
+    m_ExpandedIDs: 000000008a2f00001c3000007a310000c6310000e43100002832000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -338,7 +338,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008a2f00001c30000078310000c4310000e231000026320000
+    m_ExpandedIDs: 000000008a2f00001c3000007a310000c6310000e431000028320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -369,18 +369,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000ca2c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: GameScene 1
-      m_OriginalName: GameScene 1
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 14316
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
@@ -454,9 +454,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: eefbfeff
-    m_LastClickedID: -66578
-    m_ExpandedIDs: 18ceffff14d2ffff54d7ffff10dbffffb6e1ffffa6e5ffff7ae8ffffc0eefffffcf0ffffe2fbffff00000000f637000038380000cc380000e6380000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: c273f6fffaa1f6ff2ea3f6ff44acf6ff94d4f7ff8abafaffbed1faff7884ffffe888ffffc095ffffec9dffffd8a3fffff0a9ffffa2b7ffff2abaffff32c1fffff0c4ffff88caffffc6cffffffed4ffff26dbffff9edcffff08deffff6ee3ffff4eebffff54f2ffffe2fbffff0000000052640000626400000065000070650000eec7000030c8000050c80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -505,14 +505,14 @@ MonoBehaviour:
     height: 711
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 1711.6001406372445
+  lastFramingTime: 4189.543012196216
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.654793, y: 1.1504978, z: 0.018229999}
+    m_Target: {x: -1.5645193, y: -0.41097283, z: 0.050322972}
     speed: 2
-    m_Value: {x: -3.654793, y: 1.1504978, z: 0.018229999}
+    m_Value: {x: -1.5645193, y: -0.41097283, z: 0.050322972}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -544,15 +544,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 7.91643
+    m_Target: 11.071869
     speed: 2
-    m_Value: 7.91643
+    m_Value: 11.071869
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: 0.123665616, y: -0.5575392, z: 0.08444042, w: 0.8165333}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
