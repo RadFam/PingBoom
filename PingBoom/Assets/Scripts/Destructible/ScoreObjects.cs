@@ -26,7 +26,7 @@ namespace GameObjects
 			{
 				//Debug.Log(gameObject.name + " is exploded");
 				isTouched = true;
-				levelManager.AddNewScore(scoreCount, 0);
+				levelManager.AddNewScore(scoreCount, 0, transform.position);
 				myCollider.enabled = false;
 				StartCoroutine(DisposeStage());
 			}

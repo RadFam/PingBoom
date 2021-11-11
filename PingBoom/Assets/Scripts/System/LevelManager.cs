@@ -20,7 +20,8 @@ namespace SystemObjects
 		public AudioClip metalEffect;
 		public AudioClip woodEffect;
 		public AudioClip concreteEffect;
-
+		[SerializeField]
+		FlowScoresPool scoreEffects;
 		[SerializeField]
 		LevelInfoPanel levelInfoHints;
 		[SerializeField]
@@ -121,8 +122,14 @@ namespace SystemObjects
 			leastShootsCount += shootDecr;
 		}
 
-		public void AddNewScore(int addScore, int numOfDestructed) // addScore and numOfDestructed can be positive or negative numbers(!)
+		public void AddNewScore(int addScore, int numOfDestructed, Vector3 pos) // addScore and numOfDestructed can be positive or negative numbers(!)
 		{
+			if (scoreEffects.freeScores.Count > 0)
+			{
+				TextScoreFlowEffect tsfe = scoreEffects.freeScores[0];
+				tsfe.gameObject.SetActive(true);
+				tsfe.SetInitData(addScore, new Color(1.0f, 1.0f, 1.0f, 1.0f), pos);
+			}
 			headerPanelScript.SetNewScore(currentScore, currentScore + addScore);
 			currentScore += addScore;
 			currentLevelScore += addScore;

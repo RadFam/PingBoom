@@ -23,7 +23,7 @@ namespace GameObjects
 		{
 			if (col.gameObject.CompareTag("Player"))
 			{
-				levelManager.AddNewScore(scoreCount, -1);
+				levelManager.AddNewScore(scoreCount, -1, transform.position);
 				SetItselfInvisible();
 				Destroy(shield);
 				SetExplosion();

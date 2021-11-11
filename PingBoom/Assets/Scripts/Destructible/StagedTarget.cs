@@ -59,7 +59,7 @@ namespace GameObjects
 			{
 				isExploded = true;
 				Debug.Log("Staged target, minus ONE destTarget");
-				levelManager.AddNewScore(scoreCount, -1);
+				levelManager.AddNewScore(scoreCount, -1, transform.position);
 				SetItselfInvisible();
 				SetExplosion();
 			}
