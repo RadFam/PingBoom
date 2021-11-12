@@ -12,6 +12,8 @@ namespace Effects
 
         // Use this for initialization
 		[SerializeField]
+		Camera mCam;
+		[SerializeField]
 		Text winText;
 
 		[SerializeField]
@@ -31,6 +33,11 @@ namespace Effects
 			Invoke("StepNewLevel", 4.0f);
 			winText.gameObject.SetActive(true);
 			winStarFall.gameObject.SetActive(true);
+			if (mCam != null)
+			{
+				Vector3 p = mCam.ViewportToWorldPoint(new Vector3(0.5f, 1.0f, mCam.nearClipPlane));
+				winStarFall.transform.position = new Vector3(p.x, p.y, 0);
+			}
 			winStarFall.Play();
 		}
         

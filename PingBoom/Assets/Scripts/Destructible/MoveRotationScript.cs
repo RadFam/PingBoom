@@ -69,6 +69,7 @@ namespace GameObjects
                     myRigid.MovePosition(myRigid.position + moveVct * linearSpeed * Time.fixedDeltaTime);
                     if (Vector2.Distance(myRigid.position, nextPos) < deltaClosePoint)
                     {
+						//Debug.Log("myRigid.position: " + myRigid.position + "  nextPos: " + nextPos + "  deltaClosePoint: " + deltaClosePoint);
                         nextPosition = movePointsMove.GetNextPoint();
                         nextPos = new Vector2(nextPosition.position.x, nextPosition.position.y);
                         moveVct = nextPos - myRigid.position;
@@ -77,6 +78,7 @@ namespace GameObjects
 						{
 							moveAfterStay = false;
 							timeToStay = 0.0f;
+							//Debug.Log("Move to next point: " + nextPos);
 						}
                     }
                 }
@@ -87,6 +89,7 @@ namespace GameObjects
 					{
 						timeToStay = 0.0f;
 						moveAfterStay = true;
+						//Debug.Log("Move after start to: " + nextPos);
 					}
 				}
 			}

@@ -41,11 +41,12 @@ namespace GameObjects
                 }
             }
         }
+        
         void OnTriggerExit2D(Collider2D obj)
         {
             if (playerTouched && obj.CompareTag("Player"))
             {
-                player.EndBoosting();
+                //player.EndBoosting();
                 playerTouched = false;
                 playerInside = false;
             }

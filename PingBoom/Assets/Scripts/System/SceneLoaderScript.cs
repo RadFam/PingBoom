@@ -11,7 +11,9 @@ namespace SystemObjects
     {
 		public static SceneLoaderScript inst;
 
-		public enum ScenesNames {MenuScene, GameScene, GameScene2, GameScene3, GameScene4, GameScene5, GameScene6, GameScene7}
+		public enum ScenesNames {MenuScene, GameScene, GameScene2, GameScene3, GameScene4, GameScene5, GameScene6, GameScene7, GameScene8, GameScene9, GameScene10, GameScene11,
+		GameScene12, GameScene13, GameScene14, GameScene15, GameScene16, GameScene17, GameScene18, GameScene19, GameScene20, GameScene21, GameScene22, GameScene23, GameScene24,
+		GameScene25, GameScene26, GameScene27, GameScene28};
 		[SerializeField]
 		int maxFieldNum;
 		[SerializeField]
@@ -62,6 +64,7 @@ namespace SystemObjects
 
 		public void LoadNextScene()
 		{
+			Debug.Log("SCLS - currentScene: " + currentScene + "  maxFieldNum: " + maxFieldNum);
 			if (currentScene >= 1 && currentScene < maxFieldNum)
 			{
 				sceneToLoad = currentScene + 1;

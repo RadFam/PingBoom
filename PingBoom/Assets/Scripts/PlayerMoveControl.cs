@@ -100,21 +100,29 @@ namespace GameObjects
 
 		public void SetSlowing()
 		{
-			viscousFriction *= 4.0f;
+			Debug.Log("SLOW viscousFriction: " + viscousFriction);
+			viscousFriction *= 10.0f;
+			Debug.Log("SLOW viscousFriction: " + viscousFriction);
 		}
 		public void EndSlowing()
 		{
+			Debug.Log("END SLOW viscousFriction: " + viscousFriction);
 			viscousFriction = realFriction;
+			Debug.Log("END SLOW viscousFriction: " + viscousFriction);
 		}
 
 		public void SetBoosting()
 		{
+			Debug.Log("BOOST viscousFriction: " + viscousFriction);
 			viscousFriction /= 4.0f;
+			Debug.Log("BOOST viscousFriction: " + viscousFriction);
 		}
 
 		public void EndBoosting()
 		{
+			Debug.Log("END BOOST viscousFriction: " + viscousFriction);
 			viscousFriction = realFriction;
+			Debug.Log("END BOOST viscousFriction: " + viscousFriction);
 		}
 
         // Update is called once per frame
@@ -150,7 +158,7 @@ namespace GameObjects
 
 		public void EmergencyStop()
 		{
-			Debug.Log("Emergency stop invoked");
+			//Debug.Log("Emergency stop invoked");
 			isSliding = false;
 			myRigid.velocity = new Vector2(0.0f, 0.0f);
 		}

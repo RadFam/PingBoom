@@ -14,10 +14,10 @@ namespace GameObjects
 
         void OnCollisionEnter2D(Collision2D col)
 		{
-			string name = col.gameObject.GetComponent<PlayerMoveControl>().myName;
 			if (col.gameObject.CompareTag("Player"))
 			{
 				levelManager.PlayEffect(GameManager.EffectSounds.Wood); // Change sound to "rubber"
+				string name = col.gameObject.GetComponent<PlayerMoveControl>().myName;
 			}
 		}
     }

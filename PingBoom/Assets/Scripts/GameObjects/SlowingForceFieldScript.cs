@@ -44,7 +44,7 @@ namespace GameObjects
         {
             if (playerTouched && obj.CompareTag("Player"))
             {
-                player.EndSlowing();
+                //player.EndSlowing();
                 playerTouched = false;
                 playerInside = false;
             }

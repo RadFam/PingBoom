@@ -39,11 +39,16 @@ namespace Effects
 		{
 			float scale = 1.0f;
 			float y_pos = transform.position.y;
+
+			//Debug.Log("Init flow score coords: " + transform.position);
+
 			while (alphaVol > 0.2f)
 			{
-				y_pos -= 5.0f * delta;
-				scale *= (1.0f + delta/20.0f);
-				alphaVol -= (1.0f - delta);
+				y_pos += 0.1f * delta;
+				scale *= (1.0f + delta/40.0f);
+				alphaVol -= (1.0f - delta)*0.05f;
+
+				//Debug.Log("y_pos: " + y_pos + "  scale: " + scale + "  alphaVol: " + alphaVol);
 
 				transform.position = new Vector3(transform.position.x, y_pos, transform.position.z);
 				transform.localScale = new Vector3(scale, scale, 1.0f);
