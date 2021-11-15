@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e815f2cf4377a048bd49aab0a855659, type: 3}
+  m_Name: MenuSprites
+  m_EditorClassIdentifier: 
+  blueChkBox: {fileID: 21300000, guid: 4c139c0cac066ea43ba9a611c7c7a460, type: 3}
+  redChkBox: {fileID: 21300000, guid: 0ba44c53609cf234692ed9d67c5be907, type: 3}
+  yellowChkBox: {fileID: 21300000, guid: 664537c0c48f1ea45b6b08b79c256f59, type: 3}
+  greenChkBox: {fileID: 21300000, guid: 9d8c8d216000fa04fa5368c847931d39, type: 3}
+  greyBox: {fileID: 21300000, guid: 8c4f73dfb86d698449cc83b10846da27, type: 3}
+  starResults:
+  - {fileID: 21300000, guid: f445a49ed4358f040add20aa3020f3d7, type: 3}
+  - {fileID: 21300000, guid: c62a9af5f7d42f54d9b6ff958392ec2a, type: 3}
+  - {fileID: 21300000, guid: c327d000d160db24faf18c9aded121aa, type: 3}
+  - {fileID: 21300000, guid: 01c4fa5373d2d664a8764589f2e5860d, type: 3}
