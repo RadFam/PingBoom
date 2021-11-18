@@ -33,10 +33,15 @@ namespace SystemObjects
 		int currentLevelScore;
 		int gloveCount;
 		int puckChangesCount;
+		float timeOfPlay;
 
 		int destrObjectsOnScene;
 
 		bool isVictory;
+		public bool IsVictory
+		{
+			get {return isVictory;}
+		}
 		bool canCheckVictory;
 
 		public int GetLevelScore
@@ -78,8 +83,15 @@ namespace SystemObjects
 			myAudioEffects.volume = GameManager.inst.EffectsVol;
 			myAudioMusic.volume = GameManager.inst.MusicVol;
 
+			timeOfPlay = 0.0f;
+
 			Debug.Log("Current Screen resolution: " + Screen.currentResolution);
         }
+
+		void Update()
+		{
+			timeOfPlay += Time.deltaTime;
+		}
 
 		
 		public bool CheckLevelFinished(bool sliding)
@@ -156,7 +168,16 @@ namespace SystemObjects
 		IEnumerator FinishLevelCoroutine()
 		{
 			playerTap.CanProceed = false;
+			// Star check
+			bool res = levelBonusController.MakeWalkThroughDecision(level, (maxShootsCount-leastShootsCount), currentLevelScore, timeOfPlay);
+			if (!res)
+			{
+				isVictory = false;
+			}
+			// Bonus check
 			levelBonusController.MakePrizeDecision(level, currentLevelScore, currentScore, 1.0f*leastShootsCount/maxShootsCount);
+
+			// Play Final Results
 			if (isVictory)
 			{
 				GameManager.inst.CurrentLevelScore = currentLevelScore;

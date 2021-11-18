@@ -26,11 +26,13 @@ namespace Effects
 		LevelManager levelManager;
 		[SerializeField]
 		GameObject endLevelInfo;
+		[SerializeField]
+		EndLevelPreInfo endLevelPreInfo;
 
 		public void PlayWinFinal(LevelManager LM)
 		{
 			levelManager = LM;
-			Invoke("StepNewLevel", 4.0f);
+			Invoke("StepNewLevelOne", 4.0f);
 			winText.gameObject.SetActive(true);
 			winStarFall.gameObject.SetActive(true);
 			if (mCam != null)
@@ -44,7 +46,7 @@ namespace Effects
 		public void PlayFailFinal(LevelManager LM)
 		{
 			levelManager = LM;
-			Invoke("StepNewLevel", 4.0f);
+			Invoke("StepNewLevelOne", 4.0f);
 			failText.gameObject.SetActive(true);
 		}
 
@@ -57,10 +59,17 @@ namespace Effects
 			endLevelInfo.SetActive(false);
 		}
 
-		void StepNewLevel()
+		public void StepNewLevelOne()
 		{
-			endLevelInfo.SetActive(true);
-			//levelManager.StepNewLevel();
+			endLevelPreInfo.gameObject.SetActive(true);
+			endLevelPreInfo.SetResults();
+		}
+		public void StepNewLevelTwo()
+		{
+			if (levelManager.IsVictory)
+			{
+				endLevelInfo.SetActive(true);
+			}
 		}
     }
 }

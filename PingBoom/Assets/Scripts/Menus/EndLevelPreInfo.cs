@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using SystemObjects;
+using Effects;
 
 
 namespace AllMenusUI
@@ -24,6 +25,7 @@ namespace AllMenusUI
 		// Use this for initialization
 		MenuSpritesScript menuSpritesScript;
 		bool coroutinePlayed;
+		LevelBonusController LBC;
 
 		public void OnEnable()
 		{
@@ -37,8 +39,13 @@ namespace AllMenusUI
 			goodText.SetActive(false);
 			badText.SetActive(false);
 		}
-        public void SetResults(bool strikes, bool scores, bool time, int need)
+        public void SetResults()
 		{
+			LBC = FindObjectOfType<LevelBonusController>();
+			bool strikes = LBC.WalkCheck[0];
+			bool scores = LBC.WalkCheck[1];
+			bool time = LBC.WalkCheck[2];
+			int need = LBC.StarNeed;
 			StartCoroutine(ShowCoroutine(strikes, scores, time, need));
 		}
 
@@ -90,6 +97,16 @@ namespace AllMenusUI
 			yield return new WaitForSeconds(0.2f);
 
 			coroutinePlayed = true;
+		}
+
+		public void OnCloseButtonClick()
+		{
+			if (coroutinePlayed)
+			{
+				EndLevelEffects ELE = FindObjectOfType<EndLevelEffects>();
+				ELE.StepNewLevelTwo();
+				gameObject.SetActive(false);
+			}
 		}
     }
 }

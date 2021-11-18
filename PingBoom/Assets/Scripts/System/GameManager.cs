@@ -11,6 +11,7 @@ namespace SystemObjects
     {
 		public static GameManager inst;
 		public PuckObjectsScript allPucks;
+		public LevelWalkThroughScript walkThrough;
 
 		public enum EffectSounds {Explosion, Victory, Fail, Concrete, Steel, Wood};
 
@@ -120,6 +121,7 @@ namespace SystemObjects
 				Destroy(this.gameObject);
 			}
 			allPucks = Resources.Load<PuckObjectsScript>("ScriptableObjects/PuckContainer");
+			walkThrough = Resources.Load<LevelWalkThroughScript>("ScriplableObjects/Walkthrough");
 
 			everyLevelScores = new List<int>();
 			settingsFilename = "TechSav.ith";
