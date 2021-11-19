@@ -58,7 +58,8 @@ namespace Controls
 
 		void CreateGlove()
 		{
-			if (playerMoveControl.IsSliding && canPlaceGlove) // also check, if we previously check the glove on menu
+			//if (playerMoveControl.IsSliding && canPlaceGlove) // also check, if we previously check the glove on menu
+			if (canPlaceGlove) // we can place glove everywhere we want
 			{
 				Vector3 touchPlace = cam.ScreenToWorldPoint(Input.mousePosition);
 				// Check if there is no any GO colliders

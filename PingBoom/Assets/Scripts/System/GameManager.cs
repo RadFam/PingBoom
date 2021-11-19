@@ -123,6 +123,17 @@ namespace SystemObjects
 			allPucks = Resources.Load<PuckObjectsScript>("ScriptableObjects/PuckContainer");
 			walkThrough = Resources.Load<LevelWalkThroughScript>("ScriplableObjects/Walkthrough");
 
+			// Update arrays by walkthrough data(!)
+			everyLevelMaxShoots.Clear();
+			everyLevelMaxGloves.Clear();
+			everyLevelChangePucks.Clear();
+			foreach(LevelGlobalData lgd in walkThrough.levelWalkthrough)
+			{
+				everyLevelMaxShoots.Add(lgd.PuckStrikes);
+				everyLevelMaxGloves.Add(lgd.CatchGloves);
+				everyLevelChangePucks.Add(lgd.PuckChanges);
+			}
+
 			everyLevelScores = new List<int>();
 			settingsFilename = "TechSav.ith";
 

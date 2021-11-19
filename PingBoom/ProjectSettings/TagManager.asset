@@ -11,6 +11,7 @@ TagManager:
   - Sand
   - Wall
   - Concrete
+  - Death
   layers:
   - Default
   - TransparentFX

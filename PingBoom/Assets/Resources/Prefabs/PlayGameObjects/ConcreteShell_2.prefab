@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114529408115245378}
   m_Layer: 0
   m_Name: ConcreteShell_2
-  m_TagString: Untagged
+  m_TagString: Concrete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
