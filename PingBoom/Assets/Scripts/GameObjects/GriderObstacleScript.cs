@@ -3,7 +3,7 @@ using SystemObjects;
 
 namespace GameObjects
 {
-    public class GriderObstacleScript : MonoBehaviour
+    public class GriderObstacleScript : BaseObstacleScript
     {
 
         // Use this for initialization

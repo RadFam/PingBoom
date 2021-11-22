@@ -78,6 +78,10 @@ namespace GameObjects
 			realFriction = viscousFriction;
 			innerLifes = 10;
 			canCollide = true;
+			if (myName == "Gas")
+			{
+				levelManager.GasPuckAwake();
+			}
 
 			if (myName == "Concrete")
 			{
@@ -161,6 +165,11 @@ namespace GameObjects
 			//Debug.Log("Emergency stop invoked");
 			isSliding = false;
 			myRigid.velocity = new Vector2(0.0f, 0.0f);
+			if (myName == "Gas")
+			{
+				levelManager.GasPuckDestroy();
+				TakeImagery(0);
+			}
 		}
 
 		public void DeathStop()

@@ -26,6 +26,8 @@ namespace SystemObjects
 		LevelInfoPanel levelInfoHints;
 		[SerializeField]
 		FieldClickController fieldClickController;
+		[SerializeField]
+		LevelObjectsManager LevelObjectsManager;
 		int level;
 		int maxShootsCount;
 		int leastShootsCount;
@@ -285,6 +287,16 @@ namespace SystemObjects
 			isVictory = false;
 			canCheckVictory = false;
 			StartCoroutine(FinishLevelCoroutine());
+		}
+
+		public void GasPuckAwake()
+		{
+			LevelObjectsManager.PassObstacles();
+		}
+
+		public void GasPuckDestroy()
+		{
+			LevelObjectsManager.UnpassObstacles();
 		}
     }
 }

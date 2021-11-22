@@ -121,12 +121,13 @@ namespace SystemObjects
 				Destroy(this.gameObject);
 			}
 			allPucks = Resources.Load<PuckObjectsScript>("ScriptableObjects/PuckContainer");
-			walkThrough = Resources.Load<LevelWalkThroughScript>("ScriplableObjects/Walkthrough");
+			walkThrough = Resources.Load<LevelWalkThroughScript>("ScriptableObjects/Walkthrough");
 
 			// Update arrays by walkthrough data(!)
 			everyLevelMaxShoots.Clear();
 			everyLevelMaxGloves.Clear();
 			everyLevelChangePucks.Clear();
+			Debug.Log("Walkthrough: " + walkThrough);
 			foreach(LevelGlobalData lgd in walkThrough.levelWalkthrough)
 			{
 				everyLevelMaxShoots.Add(lgd.PuckStrikes);
