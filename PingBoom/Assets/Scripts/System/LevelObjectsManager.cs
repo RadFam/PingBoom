@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
+using UnityEngine.Playables;
+using SystemObjects;
 
 namespace GameObjects
 {
     public class LevelObjectsManager : MonoBehaviour
     {
+		[SerializeField]
+		LevelManager levelManager;
 		[SerializeField]
 		List<BaseObstacleScript> obstacles;
 		[SerializeField]
@@ -15,7 +18,10 @@ namespace GameObjects
         // Use this for initialization
         void Start()
         {
-
+			if (playableDirector != null && levelManager != null)
+			{
+				//playableDirector.played
+			}
         }
 
 		public bool PlayCameraCut()

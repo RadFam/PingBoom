@@ -247,6 +247,7 @@ namespace SystemObjects
 
 		public void StartLevelStage()
 		{
+			// Check if we can start movie trail
 			playerTap.CanProceed = true;
 		}
 
