@@ -3,16 +3,14 @@ using SystemObjects;
 
 namespace GameObjects
 {
-    public class SawDiskScript : MonoBehaviour
+    public class SawDiskScript : BaseObstacleScript
     {
 		[SerializeField]
 		float rotationSpeed;
-		Rigidbody2D myRigid;
 		LevelManager levelManager;
         // Use this for initialization
         void Start()
         {
-			myRigid = GetComponent<Rigidbody2D>();
 			levelManager = FindObjectOfType<LevelManager>();
         }
 

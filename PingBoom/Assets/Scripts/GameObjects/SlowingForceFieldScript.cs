@@ -19,7 +19,7 @@ namespace GameObjects
 
         void OnTriggerEnter2D(Collider2D obj)
         {
-            if (!playerTouched && obj.CompareTag("Player") && player.myName != "AntiSlow" && player.myName != "Lazy")
+            if (!playerTouched && obj.CompareTag("Player") && player.myName != "AntiSlow" && player.myName != "Lazy" && player.myName != "Gas")
             {
                 playerTouched = true;
             }

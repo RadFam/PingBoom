@@ -3,7 +3,7 @@ using SystemObjects;
 
 namespace GameObjects
 {
-    public class StoneObstacleScript : MonoBehaviour
+    public class StoneObstacleScript : BaseObstacleScript
     {
         LevelManager levelManager;
         void Start()

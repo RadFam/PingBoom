@@ -1035,6 +1035,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4293926293712062, guid: f0b3a1072482fce43812bd7a1c4259bf,
     type: 2}
   m_PrefabInternal: {fileID: 318985829}
+--- !u!114 &318985831 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114710235139383632, guid: f0b3a1072482fce43812bd7a1c4259bf,
+    type: 2}
+  m_PrefabInternal: {fileID: 318985829}
+  m_Script: {fileID: 11500000, guid: c02f33395dc4cdb4ba276e6d8eff5b55, type: 3}
 --- !u!1001 &321188818
 Prefab:
   m_ObjectHideFlags: 0
@@ -2577,6 +2583,7 @@ GameObject:
   - component: {fileID: 917075674}
   - component: {fileID: 917075677}
   - component: {fileID: 917075678}
+  - component: {fileID: 917075679}
   - component: {fileID: 917075676}
   - component: {fileID: 917075675}
   m_Layer: 0
@@ -2633,6 +2640,7 @@ MonoBehaviour:
   scoreEffects: {fileID: 2076432951}
   levelInfoHints: {fileID: 403605522}
   fieldClickController: {fileID: 917075678}
+  levelObjectsManager: {fileID: 917075679}
 --- !u!114 &917075674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2868,6 +2876,22 @@ MonoBehaviour:
   glovePrefab: {fileID: 114702644288133728, guid: 16e9645477d974e49b5263231499f75b,
     type: 2}
   levelManager: {fileID: 917075673}
+--- !u!114 &917075679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 917075670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e87ec8d62964b7847851b2a18ca89cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelManager: {fileID: 917075673}
+  obstacles:
+  - {fileID: 1276317836}
+  - {fileID: 318985831}
+  playableDirector: {fileID: 0}
 --- !u!1 &1034890550
 GameObject:
   m_ObjectHideFlags: 0
@@ -3298,6 +3322,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1276317836 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114710235139383632, guid: f0b3a1072482fce43812bd7a1c4259bf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1276317832}
+  m_Script: {fileID: 11500000, guid: c02f33395dc4cdb4ba276e6d8eff5b55, type: 3}
 --- !u!1 &1283625230
 GameObject:
   m_ObjectHideFlags: 0

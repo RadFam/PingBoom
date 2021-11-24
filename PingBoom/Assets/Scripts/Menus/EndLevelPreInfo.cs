@@ -29,7 +29,7 @@ namespace AllMenusUI
 
 		public void OnEnable()
 		{
-			menuSpritesScript = Resources.Load<MenuSpritesScript>("ScriptableObjects/MenuSpritesScript");
+			menuSpritesScript = Resources.Load<MenuSpritesScript>("ScriptableObjects/MenuSprites");
 
 			strikeCheck.sprite = menuSpritesScript.greyBox;
 			scoreCheck.sprite = menuSpritesScript.greyBox;

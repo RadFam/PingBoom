@@ -64,7 +64,7 @@ namespace SystemObjects
 
 		public void LoadNextScene()
 		{
-			Debug.Log("SCLS - currentScene: " + currentScene + "  maxFieldNum: " + maxFieldNum);
+			//Debug.Log("SCLS - currentScene: " + currentScene + "  maxFieldNum: " + maxFieldNum);
 			if (currentScene >= 1 && currentScene < maxFieldNum)
 			{
 				sceneToLoad = currentScene + 1;

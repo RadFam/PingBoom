@@ -191,6 +191,12 @@ MonoBehaviour:
   movePointsPool: {fileID: 1442695266}
   pathNum: 2
   deltaClosePoint: 0.01
+--- !u!114 &14099751 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114060327461559828, guid: 4258ab4cb116cda4ba4282ca5dd60a7c,
+    type: 2}
+  m_PrefabInternal: {fileID: 14099747}
+  m_Script: {fileID: 11500000, guid: 98d1e24373f9a7c45945c1785403feea, type: 3}
 --- !u!1 &15005060
 GameObject:
   m_ObjectHideFlags: 0
@@ -2575,6 +2581,7 @@ GameObject:
   - component: {fileID: 917075678}
   - component: {fileID: 917075676}
   - component: {fileID: 917075675}
+  - component: {fileID: 917075679}
   m_Layer: 0
   m_Name: ControlsObject
   m_TagString: Untagged
@@ -2629,6 +2636,7 @@ MonoBehaviour:
   scoreEffects: {fileID: 2115159309}
   levelInfoHints: {fileID: 0}
   fieldClickController: {fileID: 917075678}
+  levelObjectsManager: {fileID: 917075679}
 --- !u!114 &917075674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2864,6 +2872,23 @@ MonoBehaviour:
   glovePrefab: {fileID: 114702644288133728, guid: 16e9645477d974e49b5263231499f75b,
     type: 2}
   levelManager: {fileID: 917075673}
+--- !u!114 &917075679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 917075670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e87ec8d62964b7847851b2a18ca89cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelManager: {fileID: 917075673}
+  obstacles:
+  - {fileID: 1957501133}
+  - {fileID: 1735846207}
+  - {fileID: 14099751}
+  playableDirector: {fileID: 0}
 --- !u!1001 &921148789
 Prefab:
   m_ObjectHideFlags: 0
@@ -5189,6 +5214,12 @@ MonoBehaviour:
   movePointsPool: {fileID: 1442695266}
   pathNum: 1
   deltaClosePoint: 0.01
+--- !u!114 &1735846207 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114060327461559828, guid: 4258ab4cb116cda4ba4282ca5dd60a7c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1735846203}
+  m_Script: {fileID: 11500000, guid: 98d1e24373f9a7c45945c1785403feea, type: 3}
 --- !u!1 &1735965270
 GameObject:
   m_ObjectHideFlags: 0
@@ -5842,6 +5873,12 @@ MonoBehaviour:
   movePointsPool: {fileID: 1442695266}
   pathNum: 0
   deltaClosePoint: 0.01
+--- !u!114 &1957501133 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114060327461559828, guid: 4258ab4cb116cda4ba4282ca5dd60a7c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1957501129}
+  m_Script: {fileID: 11500000, guid: 98d1e24373f9a7c45945c1785403feea, type: 3}
 --- !u!1 &1983919662
 GameObject:
   m_ObjectHideFlags: 0

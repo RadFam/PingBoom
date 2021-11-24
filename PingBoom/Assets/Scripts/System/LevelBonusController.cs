@@ -60,14 +60,14 @@ namespace SystemObjects
 			lScore = levelScore;
 			fScore = fullScore;
 			strikes = strikesPart;
-			Debug.Log("Successfully get data for prize analysis");
+			//Debug.Log("Successfully get data for prize analysis");
 		}
 
 		public bool GetPuckPrize(out string puckDesr, out Sprite puckView)
 		{
 			puckDesr = "";
 			puckView = null;
-			Debug.Log("My level: " + level);
+			//Debug.Log("My level: " + level);
 			foreach (PuckPrizeInfo ppi in puckPrize.puckPrizes)
 			{
 				if (ppi.LevelFromAchieve <= level)

@@ -3,7 +3,7 @@ using SystemObjects;
 
 namespace GameObjects
 {
-    public class RubberObstacleScript : MonoBehaviour
+    public class RubberObstacleScript : BaseObstacleScript
     {
 		LevelManager levelManager;
         // Use this for initialization

@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26a302d3ebe68c4dab066614d849e07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCollider: {fileID: 61977410512274744}
+  myRigid: {fileID: 50317362361722214}
 --- !u!212 &212613017439735806
 SpriteRenderer:
   m_ObjectHideFlags: 1

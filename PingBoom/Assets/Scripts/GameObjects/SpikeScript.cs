@@ -3,7 +3,7 @@ using SystemObjects;
 
 namespace GameObjects
 {
-    public class SpikeScript : MonoBehaviour
+    public class SpikeScript : BaseObstacleScript
     {
 		LevelManager levelManager;
         void Start()

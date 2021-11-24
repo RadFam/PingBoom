@@ -27,7 +27,7 @@ namespace SystemObjects
 		[SerializeField]
 		FieldClickController fieldClickController;
 		[SerializeField]
-		LevelObjectsManager LevelObjectsManager;
+		LevelObjectsManager levelObjectsManager;
 		int level;
 		int maxShootsCount;
 		int leastShootsCount;
@@ -87,7 +87,7 @@ namespace SystemObjects
 
 			timeOfPlay = 0.0f;
 
-			Debug.Log("Current Screen resolution: " + Screen.currentResolution);
+			//Debug.Log("Current Screen resolution: " + Screen.currentResolution);
         }
 
 		void Update()
@@ -230,7 +230,8 @@ namespace SystemObjects
 
 			if (levelInfoHints == null)
 			{
-				playerTap.CanProceed = true;
+				levelObjectsManager.PlayCameraCut();
+				//playerTap.CanProceed = true;
 			}
 		}
 
@@ -248,6 +249,11 @@ namespace SystemObjects
 		public void StartLevelStage()
 		{
 			// Check if we can start movie trail
+			levelObjectsManager.PlayCameraCut();
+		}
+
+		public void StartLevelStageFinal()
+		{
 			playerTap.CanProceed = true;
 		}
 
@@ -292,12 +298,12 @@ namespace SystemObjects
 
 		public void GasPuckAwake()
 		{
-			LevelObjectsManager.PassObstacles();
+			levelObjectsManager.PassObstacles();
 		}
 
 		public void GasPuckDestroy()
 		{
-			LevelObjectsManager.UnpassObstacles();
+			levelObjectsManager.UnpassObstacles();
 		}
     }
 }

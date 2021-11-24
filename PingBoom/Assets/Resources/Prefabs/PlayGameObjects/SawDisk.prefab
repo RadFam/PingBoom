@@ -89,6 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55a1efd56df825b4dbf675e408be8537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCollider: {fileID: 58787179934572510}
+  myRigid: {fileID: 50274103752631130}
   rotationSpeed: 25
 --- !u!212 &212757452772300770
 SpriteRenderer:

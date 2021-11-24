@@ -89,6 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc8d01d269ae6514699a035ec0488ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCollider: {fileID: 58644430912780874}
+  myRigid: {fileID: 50958717449515044}
   shellStages:
   - {fileID: 21300000, guid: 4cbf4ee3b2124194db1a3508841c0791, type: 3}
   - {fileID: 21300002, guid: 4cbf4ee3b2124194db1a3508841c0791, type: 3}

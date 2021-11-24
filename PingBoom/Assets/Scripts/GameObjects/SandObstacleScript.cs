@@ -3,7 +3,7 @@ using SystemObjects;
 
 namespace GameObjects
 {
-    public class SandObstacleScript : MonoBehaviour
+    public class SandObstacleScript : BaseObstacleScript
     {
         LevelManager levelManager;
         void Start()

@@ -1517,6 +1517,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4630707072316610, guid: b2ce21cb73022c34a89f1e76815f1608,
     type: 2}
   m_PrefabInternal: {fileID: 689535215}
+--- !u!114 &689535217 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114926060777845700, guid: b2ce21cb73022c34a89f1e76815f1608,
+    type: 2}
+  m_PrefabInternal: {fileID: 689535215}
+  m_Script: {fileID: 11500000, guid: c02f33395dc4cdb4ba276e6d8eff5b55, type: 3}
 --- !u!1 &690468124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,6 +1734,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4974937729665982, guid: c92278c32d75e8d45a6c41e40b95c90e,
     type: 2}
   m_PrefabInternal: {fileID: 780677032}
+--- !u!114 &780677034 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114395508941684308, guid: c92278c32d75e8d45a6c41e40b95c90e,
+    type: 2}
+  m_PrefabInternal: {fileID: 780677032}
+  m_Script: {fileID: 11500000, guid: 98d1e24373f9a7c45945c1785403feea, type: 3}
 --- !u!1 &862561810
 GameObject:
   m_ObjectHideFlags: 0
@@ -2005,6 +2017,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4974937729665982, guid: c92278c32d75e8d45a6c41e40b95c90e,
     type: 2}
   m_PrefabInternal: {fileID: 915383775}
+--- !u!114 &915383777 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114395508941684308, guid: c92278c32d75e8d45a6c41e40b95c90e,
+    type: 2}
+  m_PrefabInternal: {fileID: 915383775}
+  m_Script: {fileID: 11500000, guid: 98d1e24373f9a7c45945c1785403feea, type: 3}
 --- !u!1 &917075670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,6 +2036,7 @@ GameObject:
   - component: {fileID: 917075674}
   - component: {fileID: 917075677}
   - component: {fileID: 917075678}
+  - component: {fileID: 917075679}
   - component: {fileID: 917075676}
   - component: {fileID: 917075675}
   m_Layer: 0
@@ -2074,6 +2093,7 @@ MonoBehaviour:
   scoreEffects: {fileID: 909479107}
   levelInfoHints: {fileID: 403605522}
   fieldClickController: {fileID: 917075678}
+  levelObjectsManager: {fileID: 917075679}
 --- !u!114 &917075674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2309,6 +2329,24 @@ MonoBehaviour:
   glovePrefab: {fileID: 114702644288133728, guid: 16e9645477d974e49b5263231499f75b,
     type: 2}
   levelManager: {fileID: 917075673}
+--- !u!114 &917075679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 917075670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e87ec8d62964b7847851b2a18ca89cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelManager: {fileID: 917075673}
+  obstacles:
+  - {fileID: 780677034}
+  - {fileID: 915383777}
+  - {fileID: 1781828229}
+  - {fileID: 689535217}
+  playableDirector: {fileID: 0}
 --- !u!1 &1034890550
 GameObject:
   m_ObjectHideFlags: 0
@@ -4238,6 +4276,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4314823215582838, guid: d0183dbd2dab2ab4f81ef4bb80c46fd7,
     type: 2}
   m_PrefabInternal: {fileID: 1781828227}
+--- !u!114 &1781828229 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114137806867722836, guid: d0183dbd2dab2ab4f81ef4bb80c46fd7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1781828227}
+  m_Script: {fileID: 11500000, guid: c02f33395dc4cdb4ba276e6d8eff5b55, type: 3}
 --- !u!1 &1832192032
 GameObject:
   m_ObjectHideFlags: 0

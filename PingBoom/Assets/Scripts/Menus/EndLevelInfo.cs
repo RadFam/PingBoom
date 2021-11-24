@@ -53,7 +53,7 @@ namespace AllMenusUI
 
 				LBC = FindObjectOfType<LevelBonusController>();
 				openPrize = LBC.GetPuckPrize(out puckTxt, out puckImg);
-				Debug.Log("Try to get prize decision: " + openPrize);
+				//Debug.Log("Try to get prize decision: " + openPrize);
 			}
 
 			if (openPrize)

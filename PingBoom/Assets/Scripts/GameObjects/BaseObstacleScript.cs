@@ -7,7 +7,7 @@ namespace GameObjects
         [SerializeField]
         Collider2D myCollider;
         [SerializeField]
-        Rigidbody2D myRigid;
+        protected Rigidbody2D myRigid;
 
         public void MakePassible()
         {

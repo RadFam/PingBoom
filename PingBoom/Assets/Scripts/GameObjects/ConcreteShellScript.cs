@@ -6,7 +6,7 @@ using SystemObjects;
 
 namespace GameObjects
 {
-    public class ConcreteShellScript : MonoBehaviour
+    public class ConcreteShellScript : BaseObstacleScript
     {
 		[SerializeField]
 		List<Sprite> shellStages;

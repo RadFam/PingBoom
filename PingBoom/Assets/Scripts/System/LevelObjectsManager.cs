@@ -20,19 +20,25 @@ namespace GameObjects
         {
 			if (playableDirector != null && levelManager != null)
 			{
-				//playableDirector.played
+				playableDirector.stopped += EndCameraCut;
 			}
         }
 
-		public bool PlayCameraCut()
+		public void PlayCameraCut()
 		{
 			if (playableDirector != null)
 			{
 				playableDirector.Play();
-				return true;
 			}
+			else
+			{
+				levelManager.StartLevelStageFinal();
+			}
+		}
 
-			return true;
+		public void EndCameraCut(PlayableDirector pd)
+		{
+			levelManager.StartLevelStageFinal();
 		}
 
 		public void PassObstacles()
