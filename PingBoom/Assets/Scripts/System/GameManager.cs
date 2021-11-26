@@ -90,7 +90,8 @@ namespace SystemObjects
 				{
 					ans += everyLevelMaxGloves[i];
 				}
-				return ans;
+				//return ans;
+				return everyLevelMaxGloves[SceneLoaderScript.inst.CurrentScene - 1];
 			}
 			set {everyLevelMaxGloves[SceneLoaderScript.inst.CurrentScene - 1] = value;}
 		}
@@ -103,7 +104,8 @@ namespace SystemObjects
 				{
 					ans += everyLevelChangePucks[i];
 				}
-				return ans;
+				//return ans;
+				return everyLevelChangePucks[SceneLoaderScript.inst.CurrentScene - 1];
 			}
 			set {everyLevelChangePucks[SceneLoaderScript.inst.CurrentScene - 1] = value;}
 		}

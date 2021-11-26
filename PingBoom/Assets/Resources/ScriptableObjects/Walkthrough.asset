@@ -17,61 +17,61 @@ MonoBehaviour:
     puckChanges: 0
     puckStrikes: 100
     levelTime: 10000
-    levelMinScore: 0
+    levelMinScore: 200
     starScore: 1
   - levelNum: 2
     catchGloves: 0
     puckChanges: 0
     puckStrikes: 100
     levelTime: 10000
-    levelMinScore: 0
+    levelMinScore: 300
     starScore: 2
   - levelNum: 3
     catchGloves: 0
     puckChanges: 0
     puckStrikes: 100
     levelTime: 10000
-    levelMinScore: 0
+    levelMinScore: 600
     starScore: 1
   - levelNum: 4
     catchGloves: 0
     puckChanges: 0
     puckStrikes: 100
     levelTime: 10000
-    levelMinScore: 0
+    levelMinScore: 1000
     starScore: 1
   - levelNum: 5
     catchGloves: 2
     puckChanges: 0
     puckStrikes: 100
     levelTime: 10000
-    levelMinScore: 0
+    levelMinScore: 4000
     starScore: 1
   - levelNum: 6
     catchGloves: 3
     puckChanges: 2
     puckStrikes: 100
     levelTime: 10000
-    levelMinScore: 0
+    levelMinScore: 5000
     starScore: 1
   - levelNum: 7
     catchGloves: 3
     puckChanges: 3
     puckStrikes: 100
     levelTime: 10000
-    levelMinScore: 0
+    levelMinScore: 1500
     starScore: 1
   - levelNum: 8
     catchGloves: 3
     puckChanges: 3
     puckStrikes: 100
     levelTime: 10000
-    levelMinScore: 0
+    levelMinScore: 9000
     starScore: 1
   - levelNum: 9
     catchGloves: 3
     puckChanges: 3
     puckStrikes: 100
     levelTime: 10000
-    levelMinScore: 0
+    levelMinScore: 5000
     starScore: 1
